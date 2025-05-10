@@ -401,3 +401,62 @@ document.addEventListener('DOMContentLoaded', function() {
     hreflangX.href = 'https://afa-virtuals.com/';
     head.appendChild(hreflangX);
 });
+
+
+// google form codes
+
+// Add this script to your website
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Change button text to show loading
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Sending...';
+    
+    // Show sending message
+    formStatus.innerHTML = '<p class="sending">Sending your message...</p>';
+    
+    // Collect form data
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    
+    // Send form data to Google Apps Script
+    fetch(form.action, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'no-cors'
+    })
+    .then(response => {
+      // Since we're using no-cors mode, we can't access the response content
+      // Show success message based on expected behavior
+      formStatus.innerHTML = '<p class="success">Thank you! Your message has been sent successfully.</p>';
+      form.reset();
+    })
+    .catch(error => {
+      formStatus.innerHTML = '<p class="error">Oops! There was a problem sending your message. Please try again later.</p>';
+      console.error('Form submission error:', error);
+    })
+    .finally(() => {
+      // Reset button
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalButtonText;
+      
+      // Clear status message after 5 seconds
+      setTimeout(() => {
+        formStatus.innerHTML = '';
+      }, 5000);
+    });
+  });
+});
