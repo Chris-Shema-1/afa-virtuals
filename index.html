@@ -1195,10 +1195,7 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send Me a Message</h3>
-                    <form name="contact" method="POST" data-netlify="true" data-netlify="true" id="contact-form">
-                        <p class="hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                        </p>
+                    <form name="contact" method="POST" action="https://script.google.com/macros/s/AKfycbzibw0BcQradCxi9wrR8ekppdDF59-aBe1iF5MauCaRmRlEFPtUiX4li2hFonUFWFjY/exec" id="contact-form">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1235,6 +1232,8 @@
                         <div id="form-status"></div>
                     </form>
                 </div>
+
+
             </div>
         </div>
     </section>
@@ -1305,5 +1304,31 @@
 
     <!-- JavaScript -->
     <script src="/asset/js/main.js"></script>
+    <script>
+document.getElementById('contact-form').onsubmit = function(event) {
+    event.preventDefault();  // Prevent the default form submission
+
+    // Use the FormData API to gather form data
+    var formData = new FormData(this);
+
+    // Send the data to Google Apps Script via fetch API
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Display a success message or handle response
+        document.getElementById('form-status').innerHTML = '<p>Message sent successfully! We will get back to you soon.</p>';
+        // Optionally, reset the form
+        document.getElementById('contact-form').reset();
+    })
+    .catch(error => {
+        // Handle any errors
+        document.getElementById('form-status').innerHTML = '<p>There was an error sending your message. Please try again later.</p>';
+    });
+};
+</script>
+
 </body>
 </html>
