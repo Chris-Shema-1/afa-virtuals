@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Afanyu-VA",
+			"path": "."
+		},
+		{
+			"name": "img",
+			"path": "../Portfolio/assets/img"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Afanyu-VA"
+	}
+}
