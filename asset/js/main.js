@@ -403,60 +403,72 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// google form codes
-
-// Add this script to your website
+/// ===== email news latter subscription
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
-  
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+    const form = document.getElementById('newsletter-form');
+    const formStatus = document.getElementById('form-status');
     
-    // Change button text to show loading
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.innerHTML;
-    submitButton.disabled = true;
-    submitButton.innerHTML = 'Sending...';
-    
-    // Show sending message
-    formStatus.innerHTML = '<p class="sending">Sending your message...</p>';
-    
-    // Collect form data
-    const formData = new FormData(form);
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-    
-    // Send form data to Google Apps Script
-    fetch(form.action, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      mode: 'no-cors'
-    })
-    .then(response => {
-      // Since we're using no-cors mode, we can't access the response content
-      // Show success message based on expected behavior
-      formStatus.innerHTML = '<p class="success">Thank you! Your message has been sent successfully.</p>';
-      form.reset();
-    })
-    .catch(error => {
-      formStatus.innerHTML = '<p class="error">Oops! There was a problem sending your message. Please try again later.</p>';
-      console.error('Form submission error:', error);
-    })
-    .finally(() => {
-      // Reset button
-      submitButton.disabled = false;
-      submitButton.innerHTML = originalButtonText;
-      
-      // Clear status message after 5 seconds
-      setTimeout(() => {
-        formStatus.innerHTML = '';
-      }, 5000);
-    });
-  });
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show "sending" status
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerText;
+            submitButton.disabled = true;
+            submitButton.innerText = 'Subscribing...';
+            
+            if (formStatus) {
+                formStatus.innerHTML = '<p style="color: #0056b3;">Processing your subscription...</p>';
+            }
+            
+            // Use FormData and URLSearchParams
+            const formData = new FormData(form);
+            const searchParams = new URLSearchParams();
+            
+            // Convert FormData to URLSearchParams
+            for (const pair of formData) {
+                searchParams.append(pair[0], pair[1]);
+            }
+            
+            // Add a source parameter
+            searchParams.append('source', 'Website Newsletter Form');
+            
+            // Send the form data
+            fetch(form.action, {
+                method: 'POST',
+                body: searchParams,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                mode: 'no-cors' // Important for cross-origin requests to Google Scripts
+            })
+            .then(() => {
+                // Show success message
+                if (formStatus) {
+                    formStatus.innerHTML = '<p style="color: #28a745;">Thank you! You\'ve been subscribed to our newsletter.</p>';
+                }
+                form.reset();
+            })
+            .catch(error => {
+                // Show error message
+                console.error('Form submission error:', error);
+                if (formStatus) {
+                    formStatus.innerHTML = '<p style="color: #dc3545;">Oops! There was a problem with your subscription. Please try again later.</p>';
+                }
+            })
+            .finally(() => {
+                // Reset button
+                submitButton.disabled = false;
+                submitButton.innerText = originalText;
+                
+                // Clear status message after 5 seconds
+                if (formStatus) {
+                    setTimeout(() => {
+                        formStatus.innerHTML = '';
+                    }, 5000);
+                }
+            });
+        });
+    }
 });

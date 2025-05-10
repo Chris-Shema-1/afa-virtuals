@@ -71,7 +71,7 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="index.html#home" class="nav-link active">Home</a></li>
                     <li><a href="index.html#about" class="nav-link">About</a></li>
                     <li><a href="index.html#services" class="nav-link">Services</a></li>
                     <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
@@ -87,7 +87,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="badge">Available for New Clients</div>
-                <h1 class="fade-in">Elevate Your Business with <span>Afa-Virtuals</span></h1>
+                <h1 class="fade-in">Elevate Your Business with <br> <span>Afa-Virtuals</span></h1>
                 <p class="fade-in">I help entrepreneurs and businesses focus on growth by handling their administrative tasks, tech solutions, web design, and social media management.</p>
                 <div class="cta-buttons fade-in">
                     <a href="#services" class="btn btn-primary">Explore Services</a>
@@ -213,7 +213,7 @@
         <div class="commitment-content">
           <h3>My Commitment To Excellence</h3>
           <p>Your success is my success. I bring passion, dedication, and professional excellence to every task, no matter how big or small. My ALX certification is just the beginning of our journey together.</p>
-            <a href="//wa.me/250798971739?text=Hi%20Afa-Vertuals%20%F0%9F%91%8B%0AI%20just%20visited%20your%20website%20and%20I%E2%80%99m%20interested%20in%20your%20virtual%20assistant%20services.%20I%E2%80%99d%20love%20to%20learn%20more%20about%20how%20you%20can%20help%20me%20manage%20and%20grow%20my%20business.%20Let%20me%20know%20the%20next%20steps.%20Thanks!%0A%0AMy%20name%20is%3A%20" target="_blank" class="btn btn-light">Let's Create Something Amazing</a>
+            <a href="#contact" target="_blank" class="btn btn-light">Let's Create Something Amazing</a>
         </div>
       </div>
     </div>
@@ -1194,46 +1194,51 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-        <h3>Send Me a Message</h3>
-        <!-- Replace YOUR_GOOGLE_SCRIPT_URL with your actual deployed script URL -->
-        <form name="contact" method="POST" action="https://script.google.com/macros/s/AKfycbwnR5TH4gbcsiy-DuJLB_8SXffWDgfaFZxAjKYsUtRiHptea9tdkVkMpKEn1W7qTt66/exec" id="contact-form">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number (Optional)</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="service">Service Interested In</label>
-                <select id="service" name="service" required>
-                    <option value="">Select a Service</option>
-                    <option value="Administrative Support">Administrative Support</option>
-                    <option value="Tech Support & Solutions">Tech Support & Solutions</option>
-                    <option value="Web Design">Web Design</option>
-                    <option value="Social Media Management">Social Media Management</option>
-                    <option value="Starter Package">Starter Package</option>
-                    <option value="Professional Package">Professional Package</option>
-                    <option value="Executive Package">Executive Package</option>
-                    <option value="Custom Package">Custom Package</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </div>
-            <div id="form-status"></div>
-        </form>
-    </div>
+   <div class="contact-form">
+    <h3>Send Me a Message</h3>
+    <!-- Replace with your actual Web App URL -->
+    <form id="contact-form" method="POST" action="https://script.google.com/macros/s/AKfycbwnNVV2XKcaLur09pts3PLa-DWxg7LqsQGvCRz50ueWw6upy7ubm6ynd0VdmyPsj6pt/exec">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service" required>
+                <option value="">Select a Service</option>
+                <option value="Administrative Support">Administrative Support</option>
+                <option value="Tech Support & Solutions">Tech Support & Solutions</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Social Media Management">Social Media Management</option>
+                <option value="Starter Package">Starter Package</option>
+                <option value="Professional Package">Professional Package</option>
+                <option value="Executive Package">Executive Package</option>
+                <option value="Custom Package">Custom Package</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        
+        <!-- Added a status div for feedback -->
+        <div id="form-status"></div>
+        
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</div>
 
 
             </div>
@@ -1258,6 +1263,8 @@
                 <div class="footer-logo">
                     <a href="#home">Afa<span>-</span>Virtuals</a>
                     <p>Professional Virtual Assistant Services</p>
+
+                    
                 </div>
                 <div class="footer-links">
                     <h3>Quick Links</h3>
@@ -1294,9 +1301,8 @@
                         <a href="https://www.instagram.com/p/DJaTYrYKwNu/?igsh=MTkzcWw5MjM5YWowcw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/share/p/1UkgbQ2vQk/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Afa-Virtuals. All Rights Reserved. | Powered By BigOne</p>
+
+                  
             </div>
         </div>
         <a href="#home" class="back-to-top" aria-label="Back to top">
@@ -1304,9 +1310,82 @@
         </a>
     </footer>
 
+     <div class="footer-bottom">
+                <p>&copy; 2023 Afa-Virtuals. All Rights Reserved. | Powered By BigOne</p>
+            </div>
+
     <!-- JavaScript -->
     <script src="/asset/js/main.js"></script>
 
-
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show "sending" status
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton.innerText;
+      submitButton.disabled = true;
+      submitButton.innerText = 'Sending...';
+      
+      if (formStatus) {
+        formStatus.innerHTML = '<p style="color: #0056b3;">Sending your message...</p>';
+      }
+      
+      // Method 1: Use FormData and URLSearchParams (most compatible method)
+      const formData = new FormData(form);
+      const searchParams = new URLSearchParams();
+      
+      // Convert FormData to URLSearchParams
+      for (const pair of formData) {
+        searchParams.append(pair[0], pair[1]);
+      }
+      
+      // Log what we're sending for debugging
+      console.log("Sending form data:", Object.fromEntries(formData));
+      
+      // Send the form data
+      fetch(form.action, {
+        method: 'POST',
+        body: searchParams,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        mode: 'no-cors' // Important for cross-origin requests to Google Scripts
+      })
+      .then(() => {
+        // Show success message (we assume success because no-cors doesn't give us response data)
+        if (formStatus) {
+          formStatus.innerHTML = '<p style="color: #28a745;">Thank you! Your message has been sent successfully.</p>';
+        }
+        form.reset();
+      })
+      .catch(error => {
+        // Show error message
+        console.error('Form submission error:', error);
+        if (formStatus) {
+          formStatus.innerHTML = '<p style="color: #dc3545;">Oops! There was a problem sending your message. Please try again later.</p>';
+        }
+      })
+      .finally(() => {
+        // Reset button
+        submitButton.disabled = false;
+        submitButton.innerText = originalText;
+        
+        // Clear status message after 5 seconds
+        if (formStatus) {
+          setTimeout(() => {
+            formStatus.innerHTML = '';
+          }, 5000);
+        }
+      });
+    });
+  }
+});
+</script>
 </body>
 </html>
