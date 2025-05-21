@@ -100,66 +100,64 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.getElementById('prev-testimonial');
     const nextButton = document.getElementById('next-testimonial');
     let currentTestimonial = 0;
-    
+    const testimonialsPerScreen = window.innerWidth > 900 ? 2 : 1;
+
     function showTestimonial(index) {
-        // Hide all testimonials
-        testimonialItems.forEach(item => {
+        testimonialItems.forEach((item, i) => {
             item.classList.remove('active');
+            if (i >= index && i < index + testimonialsPerScreen) {
+                item.classList.add('active');
+            }
         });
-        
-        // Remove active class from all dots
         testimonialDots.forEach(dot => {
             dot.classList.remove('active');
         });
-        
-        // Show the selected testimonial
-        testimonialItems[index].classList.add('active');
-        testimonialDots[index].classList.add('active');
+        const dotIndex = Math.floor(index / testimonialsPerScreen);
+        if (testimonialDots[dotIndex]) testimonialDots[dotIndex].classList.add('active');
         currentTestimonial = index;
     }
-    
+
     // Next testimonial
     if (nextButton) {
         nextButton.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+            currentTestimonial = (currentTestimonial + testimonialsPerScreen) % testimonialItems.length;
             showTestimonial(currentTestimonial);
         });
     }
-    
+
     // Previous testimonial
     if (prevButton) {
         prevButton.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
+            currentTestimonial = (currentTestimonial - testimonialsPerScreen + testimonialItems.length) % testimonialItems.length;
             showTestimonial(currentTestimonial);
         });
     }
-    
+
     // Dot navigation
-    testimonialDots.forEach(dot => {
+    testimonialDots.forEach((dot, d) => {
         dot.addEventListener('click', () => {
-            const index = parseInt(dot.getAttribute('data-index'));
-            showTestimonial(index);
+            currentTestimonial = d * testimonialsPerScreen;
+            showTestimonial(currentTestimonial);
         });
     });
 
     // Auto-rotate testimonials
     let testimonialInterval = setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+        currentTestimonial = (currentTestimonial + testimonialsPerScreen) % testimonialItems.length;
         showTestimonial(currentTestimonial);
-    }, 5000);
-    
+    }, 30000);
+
     // Pause auto-rotation on hover
     const testimonialWrapper = document.querySelector('.testimonial-wrapper');
     if (testimonialWrapper) {
         testimonialWrapper.addEventListener('mouseenter', () => {
             clearInterval(testimonialInterval);
         });
-        
         testimonialWrapper.addEventListener('mouseleave', () => {
             testimonialInterval = setInterval(() => {
-                currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+                currentTestimonial = (currentTestimonial + testimonialsPerScreen) % testimonialItems.length;
                 showTestimonial(currentTestimonial);
-            }, 5000);
+            }, 30000);
         });
     }
 
@@ -400,6 +398,60 @@ document.addEventListener('DOMContentLoaded', function() {
     hreflangX.hreflang = 'x-default';
     hreflangX.href = 'https://afa-virtuals.com/';
     head.appendChild(hreflangX);
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const handleIntersection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                if (entry.target.classList.contains('animate-fadeInUp')) {
+                    entry.target.style.opacity = '1';
+                }
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    // Observe elements with animation classes
+    document.querySelectorAll('.reveal, .animate-fadeInUp, .animate-fadeIn, .animate-fadeInLeft, .animate-fadeInRight').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Initialize scroll-triggered animations
+    const scrollElements = document.querySelectorAll('[data-scroll]');
+    
+    const elementInView = (el, scrollOffset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) * (1 - scrollOffset));
+    };
+
+    const displayScrollElement = (element) => {
+        element.dataset.scroll = "in";
+    };
+
+    const hideScrollElement = (element) => {
+        element.dataset.scroll = "out";
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 0.25)) {
+                displayScrollElement(el);
+            } else {
+                hideScrollElement(el);
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScrollAnimation);
+    handleScrollAnimation(); // Initial check
 });
 
 
