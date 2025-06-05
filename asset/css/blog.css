@@ -370,3 +370,30 @@
     0% { transform: translateY(0) scale(1); }
     100% { transform: translateY(-20px) scale(1.08); }
 }
+
+:root {
+  --primary-color: #f97316;
+  --secondary-color: #ff9e00;
+  --accent-color: #ffb700;
+  --dark-color: #1f2937;
+  --light-color: #f7fafc;
+  --gray-color: #718096;
+  --success-color: #38b2ac;
+  --error-color: #e53e3e;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --border-radius: 10px;
+  --gradient: linear-gradient(135deg, #f97316 0%, #ff9e00 100%);
+}
+
+@media (max-width: 700px) {
+  section, .hero-section, .services-hero, .about-story-section, .about, .about-business, .skills, .fun-fact-section, .portfolio, .testimonials, .faq, .cta {
+    min-height: 70vh !important;
+    height: auto;
+  }
+  main, .hero, .about-section, .services-section, .portfolio-section, .process-section {
+    min-height: 70vh;
+  }
+}

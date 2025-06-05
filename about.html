@@ -30,6 +30,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/asset/css/style.css">
     <link rel="stylesheet" href="/asset/css/about.css">
+    <link rel="stylesheet" href="/asset/css/animate.css">
+    <link rel="stylesheet" href="/asset/css/index.css">
 </head>
 <body>
 
@@ -65,62 +67,88 @@
         </div>
     </header>
 
-    <!-- Hero Section (No Image, Animated Orange Shapes) -->
-    <section class="hero-section">
-        <div class="hero-animated-shapes">
-            <span class="shape1"></span>
-            <span class="shape2"></span>
-            <span class="shape3"></span>
-            <span class="shape4"></span>
-        </div>
-        <div class="hero-flex">
-            <div class="hero-content hero-content-minimal center-hero">
-                <h1 class="hero-main-title gradient-text">Meet the Minds<br>Behind <span class="brand-highlight">Afa-Virtuals</span></h1>
-                <p class="hero-motivation hero-motivation-strong">Your business deserves more than just help—<span class="motivation-highlight">it deserves a partner in your success.</span></p>
-                <div class="hero-cta">
-                    <a href="#about" class="btn btn-primary pulse">Meet the Founders</a>
-                    <a href="index.html#contact" class="btn btn-light">Let's Work Together</a>
+    <!-- Hero Section (matching index.html design) -->
+    <section class="services-hero">
+        <div class="container hero-flex">
+            <div class="hero-content">
+                <h1>Get More Done. <br> We Handle the Rest</h1>
+                <p>Unlock more time and accelerate growth with our premium virtual assistant services. From admin tasks to tech solutions, we handle the details so you can focus on what matters most.</p>
+                <div class="cta-buttons">
+                    <a href="#about-story" class="btn btn-primary">Learn About Us</a>
+                    <a href="index.html#contact" class="btn btn-outline">Free Strategy Call</a>
                 </div>
             </div>
-            <div class="hero-img-col">
-                <img src="/asset/img/va.png" alt="Virtual Assistant Graphic" class="hero-graphic hero-graphic-side">
+            <div class="hero-graphic">
+                <img src="asset/img/va.png" alt="Virtual Assistant Services" class="hero-img">
+                <div class="animated-shape shape-1"></div>
+                <div class="animated-shape shape-2"></div>
             </div>
         </div>
     </section>
 
-    <!-- Founders Section (no About Us subheader) -->
-    <section id="about" class="about">
+    <!-- About Section (with image) -->
+    <section id="about-story" class="about-story-section">
+      <div class="container about-story-flex">
+        <div class="about-story-img-col">
+          <img src="asset/img/afa.jpg" alt="Afa-Virtuals Team" class="about-story-img">
+        </div>
+        <div class="about-story-content">
+          <h2>About Afa-Virtuals</h2>
+          <p>At Afa-Virtuals, we don’t just assist — we elevate.<br>
+          We’re a passionate team of creatives and professionals on a mission to help busy entrepreneurs, startups, and growing brands reclaim their time and focus on what truly matters.<br><br>
+          Whether it’s managing your inbox, curating content, organizing data, or designing your next digital presence — we deliver dependable, high-quality support with a human touch.<br><br>
+          We believe in simplicity, consistency, and care — the kind of service that feels like an extension of your own team.<br><br>
+          Afa-Virtuals isn’t just a virtual assistant brand. It’s your behind-the-scenes power, your peace of mind, and your partners in progress.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section (Replaces Founders Section) -->
+    <section id="team" class="team">
         <div class="container">
-            <div class="founders-grid">
-                <!-- Founder 1 -->
-                <div class="founder-card interactive-card" data-founder="emmanuel">
-                    <div class="certificate-block">
-                      <div class="certificate-label">Certified Virtual Assistant</div>
-                      <img src="/asset/img/va-cirtificate.jpg" alt="Emmanuel Certificate" class="founder-certificate large-certificate">
+            <h2 class="section-header">Meet Our Team</h2>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="asset/img/afa.jpg" alt="Afanyu Emmanuel" class="team-avatar" />
                     </div>
-                    <div class="founder-info">
+                    <div class="team-info">
                         <h3>Afanyu Emmanuel</h3>
                         <p class="position">Co-Founder & Lead VA</p>
-                        <p class="bio">Afanyu combines his background in software engineering with a detail-oriented approach to virtual assistance, helping clients streamline tasks, manage digital tools, and keep their operations running smoothly.</p>
-                        <div class="founder-social">
-                            <a href="https://www.linkedin.com/in/afanyuemmanuel/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="mailto:afanyuemma2002@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <p class="bio">Software Engineer & Virtual Assistant. Afanyu combines technical expertise with a detail-oriented approach, helping clients streamline tasks, manage digital tools, and keep their operations running smoothly.</p>
+                        <div class="certificate-block">
+                            <button class="view-certificate-btn" data-certificate="emmanuel">View Certificate</button>
                         </div>
                     </div>
                 </div>
-                <!-- Founder 2 -->
-                <div class="founder-card interactive-card" data-founder="cofounder">
-                    <div class="certificate-block">
-                      <div class="certificate-label">Certified Virtual Assistant</div>
-                      <img src="/asset/img/va-gill.jpg" alt="Gillian Certificate" class="founder-certificate large-certificate">
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="asset/img/chris.jpg" alt="Shema Christian" class="team-avatar" />
                     </div>
-                    <div class="founder-info">
+                    <div class="team-info">
+                        <h3>Shema Christian</h3>
+                        <p class="position">Co-Founder & Designer</p>
+                        <p class="bio">Software Engineer & Graphic Designer. Christian is passionate about building digital solutions and visual stories, delivering efficient, creative support for business operations, branding, and tech needs.</p>
+                        <div class="certificate-block">
+                            <button class="view-certificate-btn" data-certificate="christian">View Certificate</button>
+                           
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="asset/img/gill.jpg" alt="Binyu Gillian" class="team-avatar" />
+                    </div>
+                    <div class="team-info">
                         <h3>Binyu Gillian</h3>
-                        <p class="position">Co-Founder & Creative Director</p>
+                        <p class="position">Co-Founder & Social Media Manager</p>
                         <p class="bio">Gillian brings a creative vision and strong communication skills, helping clients express their ideas clearly and build meaningful connections with their audience.</p>
-                        <div class="founder-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        <div class="certificate-block">
+                            <button class="view-certificate-btn" data-certificate="gillian">View Certificate</button>
+                           
                         </div>
                     </div>
                 </div>
@@ -150,7 +178,7 @@
         </ul>
         <div class="about-cta">
             <a href="index.html#contact" class="btn btn-primary pulse">Let's Work Together</a>
-            <span class="trial-note"><i class="fas fa-gift"></i> 1-week free trial for new clients!</span>
+     
         </div>
     </section>
 

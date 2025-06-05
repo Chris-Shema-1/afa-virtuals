@@ -834,3 +834,12 @@
         justify-content: center;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .blog-post-hero,
+    .blog-post-content,
+    .related-posts,
+    .newsletter {
+        min-height: 70vh;
+    }
+}

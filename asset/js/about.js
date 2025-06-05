@@ -14,10 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'ALX Virtual Assistant Certificate',
             desc: 'Afanyu Emmanuel is officially certified by ALX for excellence in virtual assistance, administrative support, and tech solutions.'
         },
-        cofounder: {
+        christian: {
+            img: '/asset/img/va-chris.png',
+            title: 'ALX Virtual Assistant Certificate',
+            desc: 'Shema Christian is officially certified by ALX for virtual assistance, software engineering, and creative design.'
+        },
+        gillian: {
             img: '/asset/img/va-gill.jpg',
             title: 'ALX Virtual Assistant Certificate',
-            desc: 'Binyu Gillian is officially certified by ALX for creative direction, web design, and professional virtual assistance.'
+            desc: 'Binyu Gillian is officially certified by ALX for social media management, creative direction, and professional virtual assistance.'
         }
     };
 
