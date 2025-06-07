@@ -622,16 +622,18 @@
 }
 @media (max-width: 700px) {
   .about-story-img-col {
-    display: none !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
   .about-story-img {
-    width: 120px;
-  }
-  .about-story-content h2 {
-    font-size: 2rem;
-  }
-  .about-story-content p {
-    font-size: 1.08rem;
+    width: 90vw;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 }
 p {

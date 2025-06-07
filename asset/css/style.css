@@ -232,6 +232,16 @@ img {
   border-radius: var(--border-radius);
 }
 
+/* Make images clickable with pointer and add a hover effect */
+.img-fullview img {
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.img-fullview img:hover {
+  box-shadow: 0 0 0 4px var(--primary-color, #ff8800);
+  transform: scale(1.03);
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
   from {

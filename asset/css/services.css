@@ -370,12 +370,64 @@
   top: 0.1rem;
 }
 @media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .packages-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
   .project-services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
-  .project-based-section {
-    padding: 1.5rem 0.5rem 1rem 0.5rem;
+}
+@media (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+  .service-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem 0.7rem;
+    min-height: unset;
+  }
+  .packages-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .package-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem 0.7rem;
+  }
+  .project-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .project-service-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem 0.7rem;
+  }
+}
+@media (max-width: 500px) {
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  .service-card p, .service-details li {
+    font-size: 0.98rem;
+  }
+  .package-card h3 {
+    font-size: 1.2rem;
   }
 }
 
