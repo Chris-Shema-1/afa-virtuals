@@ -6,6 +6,9 @@
     padding: 13rem 0 6rem;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .blog-post-hero::before {
@@ -39,6 +42,11 @@
     position: relative;
     z-index: 2;
     animation: fadeIn 1.2s ease-out;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .post-hero-content h1 {
@@ -836,10 +844,13 @@
 }
 
 @media screen and (max-width: 700px) {
-    .blog-post-hero,
-    .blog-post-content,
-    .related-posts,
-    .newsletter {
-        min-height: 70vh;
+    .blog-post-hero {
+        padding: 5rem 0 2.5rem !important;
+        min-height: 35vh !important;
+        height: auto !important;
+    }
+    .post-hero-content h1 {
+        font-size: 2.1rem;
+        margin-bottom: 1.2rem;
     }
 }

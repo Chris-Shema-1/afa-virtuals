@@ -1,5 +1,3 @@
-
-
 /* ===== SERVICES SECTION MODERNIZED ===== */
 .services {
   background: #fff;
@@ -383,18 +381,6 @@
 
 /* Responsive Styles */
 @media (max-width: 900px) {
-  .hero-flex {
-    flex-direction: column;
-    gap: 2.5rem;
-    text-align: center;
-  }
-  .hero-content, .hero-graphic {
-    min-width: 0;
-    width: 100%;
-  }
-  .cta-buttons {
-    justify-content: center;
-  }
   .packages-section {
     left: 0;
     margin-left: 0;
@@ -403,17 +389,6 @@
   }
 }
 @media (max-width: 600px) {
-  .services-hero {
-    padding: 4rem 0 1.5rem 0;
-    min-height: 70vh;
-    height: auto;
-  }
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-  .hero-img {
-    max-width: 220px;
-  }
   .service-card {
     padding: 1.2rem 0.7rem;
     min-height: 0;
@@ -423,11 +398,11 @@
   }
 }
 @media (max-width: 700px) {
-  section, .hero-section, .services-hero, .about-story-section, .about, .about-business, .skills, .fun-fact-section, .portfolio, .testimonials, .faq, .cta {
+  section, .about-story-section, .about, .about-business, .skills, .fun-fact-section, .portfolio, .testimonials, .faq, .cta {
     min-height: 70vh !important;
     height: auto;
   }
-  main, .hero, .about-section, .services-section, .portfolio-section, .process-section {
+  main, .about-section, .services-section, .portfolio-section, .process-section {
     min-height: 70vh;
   }
 }
@@ -692,6 +667,6 @@
     }
 }
 
- 
+
 
 
