@@ -1,0 +1,332 @@
+/* Responsive Styles for Services Page (Recreated) */
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 1.5rem;
+  }
+  .services-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .packages-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .project-services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .unique-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  .service-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem 0.7rem;
+    min-height: unset;
+  }
+  .packages-section {
+    padding: 3rem 0 3rem 0;
+  }
+  .packages-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .package-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem 0.7rem;
+  }
+  .project-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .project-service-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem 0.7rem;
+  }
+  .unique-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .unique-card {
+    padding: 1.5rem 0.7rem;
+  }
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  .section-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  .service-card p, .service-details li {
+    font-size: 0.98rem;
+  }
+  .package-card h3 {
+    font-size: 1.2rem;
+  }
+  .packages-title, .project-based-section .packages-title {
+    font-size: 1.3rem;
+  }
+  .packages-subtitle, .project-based-section .packages-subtitle {
+    font-size: 1rem;
+  }
+  .custom-package-cta h3 {
+    font-size: 1.2rem;
+  }
+  .custom-package-cta p {
+    font-size: 1rem;
+  }
+  .unique-card h3 {
+    font-size: 1.1rem;
+  }
+  .unique-card p {
+    font-size: 0.98rem;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* === PROCESS RESPONSIVE STYLES === */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .process {
+        padding: 6rem 0;
+    }
+    
+    .process-item {
+        padding-right: 4rem;
+    }
+    
+    .process-item:nth-child(even) {
+        padding-left: 4rem;
+        padding-right: 0;
+    }
+    
+    .process-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .process-content p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .process {
+        padding: 4rem 0;
+    }
+    
+    .process-container {
+        margin-top: 2rem;
+        padding: 0 2rem;
+    }
+    
+    /* Switch to single column layout */
+    .process-timeline::before {
+        left: 3rem;
+        transform: none;
+    }
+    
+    .process-item {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 7rem;
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+    
+    .process-item:nth-child(even) {
+        margin-left: 0;
+        padding-left: 7rem;
+        padding-right: 0;
+    }
+    
+    .process-number {
+        left: 1.5rem;
+        right: auto;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.4rem;
+    }
+    
+    .process-item:nth-child(even) .process-number {
+        left: 1.5rem;
+    }
+    
+    .process-content {
+        padding: 1.5rem;
+    }
+    
+    .process-icon {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .process-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .process-content h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .process-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .process {
+        padding: 3rem 0;
+    }
+    
+    .process-container {
+        padding: 0 1.5rem;
+    }
+    
+    .process-timeline::before {
+        left: 2.5rem;
+    }
+    
+    .process-item {
+        padding-left: 6rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .process-item:nth-child(even) {
+        padding-left: 6rem;
+    }
+    
+    .process-number {
+        left: 1rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1.2rem;
+    }
+    
+    .process-item:nth-child(even) .process-number {
+        left: 1rem;
+    }
+    
+    .process-content {
+        padding: 1.2rem;
+    }
+    
+    .process-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .process-icon i {
+        font-size: 1.6rem;
+    }
+    
+    .process-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .process-content p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+}
+
+/* Extra small mobile phones */
+@media (max-width: 360px) {
+    .process {
+        padding: 2.5rem 0;
+    }
+    
+    .process-container {
+        padding: 0 1rem;
+    }
+    
+    .process-item {
+        padding-left: 5.5rem;
+    }
+    
+    .process-item:nth-child(even) {
+        padding-left: 5.5rem;
+    }
+    
+    .process-number {
+        left: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .process-item:nth-child(even) .process-number {
+        left: 0.8rem;
+    }
+    
+    .process-content {
+        padding: 1rem;
+    }
+    
+    .process-icon {
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .process-icon i {
+        font-size: 1.4rem;
+    }
+    
+    .process-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .process-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+
+/* Hover effects only on devices that support hover */
+@media (hover: hover) {
+    .process-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+}

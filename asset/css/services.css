@@ -369,10 +369,22 @@
   font-size: 1.2rem;
   top: 0.1rem;
 }
+
+/* Responsive Styles for Services Page */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 1.5rem;
+  }
+  .services-grid {
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 900px) {
   .services-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .packages-container {
     flex-direction: column;
@@ -383,12 +395,17 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
+  .unique-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 }
+
 @media (max-width: 700px) {
   .services-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
   .service-card {
     min-width: 0;
@@ -396,6 +413,9 @@
     width: 100%;
     padding: 1.2rem 0.7rem;
     min-height: unset;
+  }
+  .packages-section {
+    padding: 3rem 0 3rem 0;
   }
   .packages-container {
     flex-direction: column;
@@ -418,7 +438,21 @@
     width: 100%;
     padding: 1.2rem 0.7rem;
   }
+  .unique-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .unique-card {
+    padding: 1.5rem 0.7rem;
+  }
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  .section-header p {
+    font-size: 1rem;
+  }
 }
+
 @media (max-width: 500px) {
   .service-card h3 {
     font-size: 1.3rem;
@@ -429,36 +463,29 @@
   .package-card h3 {
     font-size: 1.2rem;
   }
-}
-
-/* Responsive Styles */
-@media (max-width: 900px) {
-  .packages-section {
-    left: 0;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
+  .packages-title, .project-based-section .packages-title {
+    font-size: 1.3rem;
   }
-}
-@media (max-width: 600px) {
-  .service-card {
-    padding: 1.2rem 0.7rem;
-    min-height: 0;
+  .packages-subtitle, .project-based-section .packages-subtitle {
+    font-size: 1rem;
   }
-  .packages-section {
-    padding: 3rem 0 3rem 0;
+  .custom-package-cta h3 {
+    font-size: 1.2rem;
   }
-}
-@media (max-width: 700px) {
-  section, .about-story-section, .about, .about-business, .skills, .fun-fact-section, .portfolio, .testimonials, .faq, .cta {
-    min-height: 70vh !important;
-    height: auto;
+  .custom-package-cta p {
+    font-size: 1rem;
   }
-  main, .about-section, .services-section, .portfolio-section, .process-section {
-    min-height: 70vh;
+  .unique-card h3 {
+    font-size: 1.1rem;
+  }
+  .unique-card p {
+    font-size: 0.98rem;
   }
 }
 
+body {
+  overflow-x: hidden;
+}
 
 /* === PROCESS SECTION STYLES === */
 .process {
@@ -560,24 +587,6 @@
     color: var(--gray-color);
     font-size: 1.4rem;
     margin: 0;
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .process-timeline::before {
-        left: 2rem;
-    }
-    
-    .process-item {
-        width: 100%;
-        padding-left: 7rem !important;
-        padding-right: 0 !important;
-    }
-    
-    .process-number {
-        left: 0.5rem !important;
-        right: auto !important;
-    }
 }
 
 
@@ -693,32 +702,4 @@
 .unique-card:nth-child(6) {
     animation-delay: 500ms;
 }
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .unique-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .unique-card {
-        padding: 2.5rem 2rem;
-    }
-    
-    .unique-icon {
-        width: 6rem;
-        height: 6rem;
-    }
-    
-    .unique-icon i {
-        font-size: 2.4rem;
-    }
-    
-    .unique-card h3 {
-        font-size: 1.8rem;
-    }
-}
-
-
-
 
