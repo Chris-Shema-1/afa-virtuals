@@ -219,6 +219,7 @@ body {
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 10px;
+  margin-left: auto;
   flex-shrink: 0;
 }
 

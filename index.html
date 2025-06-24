@@ -74,6 +74,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/asset/css/style.css">
     <link rel="stylesheet" href="/asset/css/index.css">
+    <link rel="stylesheet" href="/asset/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,6 +99,8 @@
         }
     </style>
 </head>
+
+
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -112,7 +115,7 @@
         <div class="container">
             <nav class="navbar" aria-label="Main Navigation">
                 <div class="logo">
-                    <a href="index.html"><img src="asset/img/logo/main.png" alt="Afa-Virtuals company logo - Virtual Assistant Services" class="site-logo"></a>
+                    <a href="index.html"><img src="asset/img/logo/main.png" alt="Afa-Virtuals company logo" class="site-logo"></a>
                 </div>
                 <div class="menu-toggle" id="mobile-menu">
                     <span class="bar"></span>
@@ -132,20 +135,64 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="services-hero">
-        <div class="container hero-flex">
-            <div class="hero-content">
-                <h1>Get More Done. <br> We Handle the Rest</h1>
-                <p>Unlock more time and accelerate growth with our premium virtual assistant services. From admin tasks to tech solutions, we handle the details so you can focus on what matters most.</p>
-                <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">Start Growing Today</a>
-                    <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="btn btn-outline">Free Strategy Call</a>
+ <section class="services-hero">
+        <div class="hero-background"></div>
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container hero-content-wrapper">
+            <div class="hero-flex">
+                <div class="hero-content">
+                    <div class="hero-badge">Premium Virtual Assistant Services</div>
+                    <h1>Scale Your Business With <span class="highlight">Expert Support</span></h1>
+                    <p>Transform your productivity and accelerate growth with our dedicated virtual assistants. From complex admin tasks to strategic business support, we handle everything so you can focus on what you do best.</p>
+                    
+                    <a href="#contact" class="cta-primary">
+                        Get Your Free Consultation
+                        <span class="arrow">→</span>
+                    </a>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-graphic">
-                <img src="asset/img/va.png" alt="Virtual Assistant at work - Afa-Virtuals helps businesses grow with admin, design, and web solutions" class="hero-img">
-                <div class="animated-shape shape-1"></div>
-                <div class="animated-shape shape-2"></div>
+                
+                <div class="hero-graphic">
+                    <div class="hero-image-container">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Professional virtual assistant working remotely" class="hero-img">
+                        
+                        <div class="floating-card card-1">
+                            <div class="card-icon">📊</div>
+                            <div class="card-title">Data Analysis</div>
+                            <div class="card-desc">Insights & Reports</div>
+                        </div>
+                        
+                        <div class="floating-card card-2">
+                            <div class="card-icon">⚡</div>
+                            <div class="card-title">Quick Turnaround</div>
+                            <div class="card-desc">24-48 Hours</div>
+                        </div>
+                        
+                        <div class="shape-bg shape-bg-1"></div>
+                        <div class="shape-bg shape-bg-2"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -221,7 +268,7 @@
                     <h2>Why Choose Us?</h2>
                     <h3>Because your time is valuable and we treat it that way.</h3>
                     <p>
-                        We’re not just virtual assistants; we’re reliable partners dedicated to helping your business run smoothly. With customized solutions, consistent communication, and a hands-on team that understands your goals, we make your success our priority. From day-to-day tasks to creative support, 
+                        We’re not just virtual assistants; we’re reliable partners dedicated to helping your business run smoothly. With customized solutions, consistent communication, and a hands-on team that understands your goals, we make your success our priority. From day-to-day tasks to brain storming to creative support, 
                         we deliver results that help you focus on what matters most.
                     </p>
                     <div class="about-overview-features">
@@ -322,66 +369,66 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
+
+    <!-- Client Success Stories -->
+    <section class="success-stories-section">
         <div class="container">
             <div class="section-header">
-                <h2>What Clients Say</h2>
-                <p>Real feedback from business owners and entrepreneurs</p>
+                <h2>Success Stories That Inspire</h2>
+                <p>Behind every project is a human story of growth, relief, and achievement</p>
             </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-controls">
-                    <button id="prev-testimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                    <button id="next-testimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="testimonial-wrapper">
-                 
-                    <div class="testimonial-item active">
-                        <div class="testimonial-content">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p>“Professional, reliable, and always delivers on time. Highly recommended for any business needing virtual support.”</p>
-                            <div class="client-info">
-                                <img src="asset/img/clients/user-2.png" alt="Client Avatar" class="client-avatar" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">
-                                <div class="client-details">
-                                    <h4>Michael Smith</h4>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <span>Small Business Owner</span>
-                                </div>
-                            </div>
-                        </div>
+            
+            <div class="success-stories-grid">
+                <div class="success-story">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson">
                     </div>
-                    <div class="testimonial-item active">
-                        <div class="testimonial-content">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p>“I love how easy it is to communicate with Afa-Virtuals. They’re always available and super professional.”</p>
-                            <div class="client-info">
-                                <img src="asset/img/clients/user-3.png" alt="Client Avatar" class="client-avatar" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">
-                                <div class="client-details">
-                                    <h4>Linda K.</h4>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <span>Marketing Consultant</span>
-                                </div>
+                    <div class="story-content">
+                        <div class="story-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Afa-Virtuals didn't just organize my business—they gave me my life back. I went from working 80-hour weeks to having time for my family while my business grew 200%."</p>
+                        </div>
+                        <div class="story-author">
+                            <h4>Sarah Johnson</h4>
+                            <span>Boutique Owner</span>
+                        </div>
+                        <div class="story-results">
+                            <div class="story-metric">
+                                <span class="metric-number">200%</span>
+                                <span class="metric-label">Revenue Growth</span>
+                            </div>
+                            <div class="story-metric">
+                                <span class="metric-number">40hrs</span>
+                                <span class="metric-label">Weekly Time Saved</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-dots">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
-                  
+
+                <div class="success-story">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Michael Chen">
+                    </div>
+                    <div class="story-content">
+                        <div class="story-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The automation system they built transformed our startup. We scaled from 5 to 50 employees without adding administrative overhead. It's like having a superpower."</p>
+                        </div>
+                        <div class="story-author">
+                            <h4>Michael Chen</h4>
+                            <span>Tech Startup CEO</span>
+                        </div>
+                        <div class="story-results">
+                            <div class="story-metric">
+                                <span class="metric-number">10x</span>
+                                <span class="metric-label">Team Growth</span>
+                            </div>
+                            <div class="story-metric">
+                                <span class="metric-number">85%</span>
+                                <span class="metric-label">Process Efficiency</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -450,7 +497,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="mailto:afavirtuals@gmail.com">afavirtuals@gmail.com</a></p>
+                            <p><a href="mailto:info@afavirtuals.com">info@afavirtuals.com</a></p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -515,12 +562,42 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="cta">
+
+    <!-- Call to Action Section -->
+    <section class="final-cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Reclaim Your Time?</h2>
-                <p>Let’s handle the busywork so you can lead your business with clarity and confidence.</p>
-                <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="btn btn-light">Get Started Today</a>
+                <div class="cta-image">
+                    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hands typing on laptop with checklist and calendar" class="cta-img">
+                    <div class="cta-overlay">
+                        <div class="overlay-text">Let's Work Together</div>
+                    </div>
+                </div>
+                
+                <div class="cta-text">
+                    <h2>Ready to Reclaim Your Time?</h2>
+                    <p>Reclaim your time. Grow your business. Start with a Virtual Assistant who just <em>gets it</em>.</p>
+                    
+                    <div class="cta-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free Consultation</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom Solutions</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Immediate Start</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="btn-cta">
+                        Get Started Today
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -557,7 +634,7 @@
                 <div class="footer-contact">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:afavirtuals@gmail.com">afavirtuals@gmail.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@afavirtuals.com">info@afavirtuals.com</a></li>
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+250798971739">+250 798 971 739</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Remote - Available Worldwide</li>
                     </ul>
