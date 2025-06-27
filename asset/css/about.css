@@ -434,9 +434,14 @@
   box-shadow: 0 8px 32px rgba(249, 115, 22, 0.15);
 }
 
+.member-cta {
+  padding: 1.5rem;
+  text-align: center;
+}
+
 .member-image {
   position: relative;
-  height: 250px;
+  height: 350px;
   overflow: hidden;
 }
 

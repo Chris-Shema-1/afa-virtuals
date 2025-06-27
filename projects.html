@@ -9,10 +9,413 @@
     <link rel="icon" type="image/png" href="asset/img/logo/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="asset/css/portfolio.css">
-    <link rel="stylesheet" href="asset/css/responsive.css">
-    <link rel="stylesheet" href="asset/css/index.css">
+
     <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/portfolio.css">
+    <link rel="stylesheet" href="asset/css/index.css">
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Case Studies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f97316;
+            --secondary-color: #ff9e00;
+            --accent-color: #ffb700;
+            --dark-color: #1f2937;
+            --light-color: #f7fafc;
+            --gray-color: #64748b;
+            --success-color: #38b2ac;
+            --error-color: #e53e3e;
+            --font-primary: "Poppins", sans-serif;
+            --font-secondary: "Inter", sans-serif;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --gradient: linear-gradient(135deg, #f97316 0%, #ff9e00 100%);
+            --hero-gradient: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: var(--light-color);
+        }
+
+        .portfolio-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 158, 0, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-primary);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            position: relative;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--gray-color);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            transform: translateY(0);
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .case-study-image {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .case-study-card:hover .case-study-image img {
+            transform: scale(1.05);
+        }
+
+        .case-study-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient);
+            padding: 8px 16px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        .case-study-category {
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-content {
+            padding: 40px 30px;
+        }
+
+        .case-study-content h3 {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .case-study-challenge,
+        .case-study-solution {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: var(--gray-color);
+        }
+
+        .case-study-challenge {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .case-study-challenge::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .case-study-solution {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .case-study-solution::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1rem;
+        }
+
+        .case-study-results {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .result-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .result-number {
+            display: block;
+            font-family: var(--font-primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .result-label {
+            font-size: 0.875rem;
+            color: var(--gray-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+
+        .case-study-link::after {
+            content: '→';
+            transition: var(--transition);
+        }
+
+        .case-study-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+        }
+
+        .case-study-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Floating elements animation */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .portfolio-section {
+                padding: 60px 0;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .case-study-content {
+                padding: 30px 20px;
+            }
+            
+            .case-study-results {
+                gap: 20px;
+            }
+            
+            .result-number {
+                font-size: 2rem;
+            }
+             
+        .success-story {
+            text-align: center;
+            gap: 2rem;
+            width: 75%;
+            display: block;
+        }
+
+        .cta-content{
+            display: block;
+        }
+        .cta-content img{
+            margin-bottom: 1rem;
+        }
+        }
+
+        @media (max-width: 480px) {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .section-header p {
+                font-size: 1.1rem;
+            }
+            
+            .case-study-results {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            max-width: 800px;
+            max-height: 90vh;
+            margin: 20px;
+            overflow-y: auto;
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gray-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--primary-color);
+        }
+    </style>
+
 </head>
 <body>
     <!-- Header -->
@@ -31,7 +434,7 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="works.html" class="nav-link ">Projects</a></li>
+                    <li><a href="projects.html" class="nav-link ">Projects</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
                     <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -62,8 +465,8 @@
                         and dreams turned into reality.
                     </p>
                     
-                    <a href="#portfolio-showcase" class="cta-primary">
-                        Explore Our Work
+                    <a href="portfolio.html" class="cta-primary">
+                        Explore Our Portfolio
                         <span class="arrow">→</span>
                     </a>
                     
@@ -120,7 +523,7 @@
               <!-- All Case Studies Tab -->
                 <div class="tab-content active" id="all">
                     <div class="case-studies-grid">
-                        <div class="case-study-card" data-category="Web Design">
+                        <div class="case-study-card" data-category="Web Design" id="abe">
                             <div class="case-study-image">
                                 <img src="/asset/img/project/business.jpg" alt="Abe Digital Marketing">
                                 <div class="case-study-overlay">
@@ -141,11 +544,11 @@
                                         <span class="result-label">Monthly Time Saved</span>
                                     </div>
                                 </div>
-                                <a href="#abe-details" class="case-study-link" onclick="openCaseStudyModal('abe')">View Full Case Study</a>
+                                <a href="/General-portfolio/case-study.html#abe-details" class="case-study-link">View Full Case Study</a>
                             </div>
                         </div>
 
-                        <div class="case-study-card" data-category="AdminService">
+                        <div class="case-study-card" data-category="AdminService" id="smarthub">
                             <div class="case-study-image">
                                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="SmartHub Technologies">
                                 <div class="case-study-overlay">
@@ -166,11 +569,11 @@
                                         <span class="result-label">Process Efficiency ↑</span>
                                     </div>
                                 </div>
-                                <a href="#smarthub-details" class="case-study-link" onclick="openCaseStudyModal('smarthub')">View Full Case Study</a>
+                                <a href="/General-portfolio/case-study.html#smarthub-details" class="case-study-link" onclick="openCaseStudyModal('smarthub')">View Full Case Study</a>
                             </div>
                         </div>
 
-                        <div class="case-study-card" data-category="Amin Services">
+                        <div class="case-study-card" data-category="Amin Services" id="smart">
                             <div class="case-study-image">
                                 <img src="../asset/img/project/smart-accademy-1.png" alt="Bloom Boutique">
                                 <div class="case-study-overlay">
@@ -191,7 +594,7 @@
                                         <span class="result-label">Social Engagement ↑</span>
                                     </div>
                                 </div>
-                                <a href="#bloom-details" class="case-study-link" onclick="openCaseStudyModal('smartaccademy')">View Full Case Study</a>
+                                <a href="/General-portfolio/case-study.html#bloom-details" class="case-study-link" onclick="openCaseStudyModal('smartaccademy')">View Full Case Study</a>
                             </div>
                         </div>
                     </div>
@@ -533,7 +936,8 @@
         </div>
     </div>
 
-    <script src="asset/js/portfolio.js"></script>
+
     <script src="asset/js/main.js"></script>
+
 </body>
 </html>

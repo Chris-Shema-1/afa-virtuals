@@ -361,11 +361,7 @@ header {
   padding: 2rem 0;
 }
 
-header.scrolled {
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-}
+
 
 .navbar {
   display: flex;
@@ -714,10 +710,14 @@ header.scrolled {
     flex-direction: column;
     text-align: center;
     gap: 4rem;
+    padding-top: 4rem;
   }
 
   .hero-content {
     padding-right: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .cta-buttons {
@@ -775,46 +775,16 @@ header.scrolled {
   /* Navigation bar overflow fix */
   .navbar {
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
-  header {
-    width: 100%;
-    overflow-x: hidden;
+  .logo a {
+    font-size: 2.4rem;
   }
 
-  .nav-menu {
-    width: 100%;
-    overflow-y: auto;
-    max-height: 80vh;
-  }
-}
-
-/* Large Mobile Devices (576px - 767px) */
-@media screen and (max-width: 767px) {
-  html {
-    font-size: 52%;
-  }
-
-  .container {
-    max-width: 540px;
-    padding: 0 2.5rem;
-  }
-
-  section {
-    padding: 8rem 0;
-  }
-
-  h1 {
-    font-size: 3.8rem;
-  }
-
-  h2 {
-    font-size: 2.8rem;
-  }
-
-  /* Navigation adjustments */
-  .menu-toggle {
+  /* Ensure the menu toggle is properly positioned */
+   .menu-toggle {
     display: block;
     z-index: 1000;
   }
@@ -851,6 +821,33 @@ header.scrolled {
   .menu-toggle.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+/* Large Mobile Devices (576px - 767px) */
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 52%;
+  }
+
+  .container {
+    max-width: 540px;
+    padding: 0 2.5rem;
+  }
+
+  section {
+    padding: 8rem 0;
+  }
+
+  h1 {
+    font-size: 3.8rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  /* Navigation adjustments */
+
 
   /* Grid adjustments */
   .unique-grid,
@@ -974,10 +971,7 @@ header.scrolled {
     margin-bottom: 3rem;
   }
 
-  /* Add more specific fixes for smaller screens */
-  /* Existing styles remain... */
 
-  /* More aggressive navbar fixes */
   .navbar {
     padding: 0 1.5rem;
   }

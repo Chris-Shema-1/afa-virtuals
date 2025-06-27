@@ -46,18 +46,6 @@ body {
 }
 
 /* ===== HEADER & NAVIGATION ===== */
-#header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
-  padding: 1rem 0;
-}
 
 .navbar {
   display: flex;
@@ -835,6 +823,9 @@ body {
   box-shadow: 0 15px 35px rgba(249, 115, 22, 0.4);
 }
 
+
+
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--dark-color);
@@ -1013,11 +1004,13 @@ body {
   }
   
   .success-story {
-    grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
+    width: 75%;
+    display: block;
   }
-  
+
+ 
   .story-image img {
     width: 120px;
     height: 120px;

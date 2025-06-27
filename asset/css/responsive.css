@@ -18,6 +18,7 @@
   --gradient: linear-gradient(135deg, #f97316 0%, #ff9e00 100%);
 }
 
+
 /* Large Screens */
 @media (max-width: 1200px) {
   .about-business { max-width: 98vw; }
@@ -98,6 +99,10 @@
     padding: 35px;
     font-size: 1.8rem;
   }
+
+  .success-story{
+    width: 70%;
+  }
 }
 
 /* Small Tablets */
@@ -116,6 +121,10 @@
   }
   main, .hero, .about-section, .services-section, .portfolio-section, .process-section {
     min-height: 70vh;
+  }
+    .success-story{
+    width: 75%;
+    display:block;
   }
 }
 
