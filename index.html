@@ -22,14 +22,6 @@
     <meta property="og:description" content="We help busy business owners get more done with expert virtual assistant support. Start your free trial today.">
     <meta property="og:image" content="https://afavirtuals.com/og-image.jpg">
     <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="en_GB">
-    <meta property="og:locale:alternate" content="en_CA">
-    <meta property="og:locale:alternate" content="en_AU">
-    <meta property="og:locale:alternate" content="en_ZA">
-    <meta property="og:locale:alternate" content="en_NG">
-    <meta property="og:locale:alternate" content="en_KE">
-    <meta property="og:locale:alternate" content="en_RW">
-    <meta property="og:locale:alternate" content="en_AE">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -39,7 +31,7 @@
     <meta name="twitter:image" content="https://afavirtuals.com/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="asset/img/logo/icon.png">
+    <link rel="icon" type="image/png" href="/placeholder.svg?height=32&width=32">
 
     <!-- Structured Data: Organization -->
     <script type="application/ld+json">
@@ -74,32 +66,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/asset/css/style.css">
     <link rel="stylesheet" href="/asset/css/index.css">
-    <link rel="stylesheet" href="/asset/css/responsive.css">
+    <link rel="stylesheet" href="/asset/css/unique.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .site-logo {
-            height: 48px;
-            width: auto;
-            display: inline-block;
-            vertical-align: middle;
-            margin-bottom: 0.2em;
-        }
-        @media (max-width: 700px) {
-            .site-logo {
-                height: 38px;
-            }
-        }
-        .hero-img {
-            max-width: 100%;
-            height: auto;
-            alt: "Virtual Assistant Services - Afa-Virtuals";
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 
 <body>
     <!-- Preloader -->
@@ -111,31 +83,36 @@
     </div>
 
     <!-- Header -->
-     <header id="header">
+    <header id="header">
         <div class="container">
             <nav class="navbar" aria-label="Main Navigation">
                 <div class="logo">
-                    <a href="index.html"><img src="asset/img/logo/main.png" alt="Afa-Virtuals company logo" class="site-logo"></a>
+                    <a href="index.html">
+                        <img src="/asset/img/logo/main.png" alt="Afa-Virtuals company logo" class="site-logo">
+                    </a>
                 </div>
                 <div class="menu-toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-                <ul class="nav-menu">
+               <div class="nav-menu-wrapper">
+                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link ">About</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="projects.html" class="nav-link ">Projects</a></li>
+                    <li><a href="index.html#team" class="nav-link">Team</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
+
+               </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
- <section class="services-hero">
+    <section class="services-hero">
         <div class="hero-background"></div>
         <div class="hero-particles">
             <div class="particle"></div>
@@ -146,7 +123,7 @@
         </div>
         
         <div class="container hero-content-wrapper">
-            <div class="hero-flex">
+            <div class="hero-flex" id="home">
                 <div class="hero-content">
                     <div class="hero-badge">Premium Virtual Assistant Services</div>
                     <h1>Scale Your Business With <span class="highlight">Expert Support</span></h1>
@@ -197,253 +174,501 @@
         </div>
     </section>
 
-    <!-- Services Overview Section -->
-    <section class="services-overview">
+    <!-- Enhanced About Us Section -->
+    <section class="about-overview enhanced" id="about">
+        <div class="container">
+            <div class="about-overview-content">
+                <div class="about-overview-text">
+                    <div class="section-badge">About Us</div>
+                    <h2>More Than Virtual Assistants</h2>
+                   
+                    <p>At Afa-Virtuals, we don't just assist, we elevate. We are a passionate team of creatives and professionals committed to helping busy entrepreneurs, startups, and growing brands reclaim their time and focus on what truly matters.</p>
+                   
+                    <p>
+                        Whether it's managing your inbox, curating content, organizing data, or designing your digital presence, we deliver dependable, high-quality support with a personal, human touch.
+                    </p>
+
+                    <p>
+                        Our approach centers on simplicity, consistency, and care — creating a seamless experience that feels like an extension of your own team. We are more than just virtual assistants; we are your behind-the-scenes power, your peace of mind, and your trusted partners in progress.
+                    </p>
+
+                    <div class="about-overview-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>1 Month Free Trial</h4>
+                                <p>Experience our service risk-free</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Custom Packages</h4>
+                                <p>Tailored solutions for your needs</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Fast Onboarding</h4>
+                                <p>Get started in 24-48 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                </div>
+                <div class="about-overview-image">
+                    <img src="/asset/img/afa.jpg" alt="Afa-Virtuals Team" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="section-bg-shapes">
+            <div class="bg-shape shape-1"></div>
+            <div class="bg-shape shape-2"></div>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Overview Section -->
+    <section class="services-overview enhanced">
         <div class="container">
             <div class="section-header">
                 <h2>What We Do</h2>
                 <p>Flexible, reliable support for busy entrepreneurs and teams.</p>
             </div>
             <div class="services-overview-grid">
-                <div class="service-category">
-                    <div class="service-category-icon"><i class="fas fa-tasks"></i></div>
-                    <h3> Admin Support</h3>
+                <div class="service-category" data-service="admin">
+                    <div class="service-category-icon">
+                        <i class="fas fa-tasks"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Admin Support</h3>
                     <ul>
-                        <li>Email & calendar management</li>
-                        <li>Data entry & organization</li>
-                        <li>Online research</li>
-                        <li>Document formatting</li>
-                        <li>File & drive organization</li>
-                        <li>Client follow-up and CRM updates</li>
+                        <li><i class="fas fa-check"></i>Email & calendar management</li>
+                        <li><i class="fas fa-check"></i>Data entry & organization</li>
+                        <li><i class="fas fa-check"></i>Online research</li>
+                        <li><i class="fas fa-check"></i>Document formatting</li>
+                        <li><i class="fas fa-check"></i>File & drive organization</li>
+                        <li><i class="fas fa-check"></i>Client follow-up and CRM updates</li>
                     </ul>
+                    <div class="service-hover-overlay">
+                        <p>Streamline your operations with professional administrative support</p>
+                    </div>
                 </div>
-                <div class="service-category">
-                    <div class="service-category-icon"><i class="fas fa-hashtag"></i></div>
+                
+                <div class="service-category" data-service="social">
+                    <div class="service-category-icon">
+                        <i class="fas fa-hashtag"></i>
+                        <div class="icon-bg"></div>
+                    </div>
                     <h3>Social Media Management</h3>
                     <ul>
-                        <li>Content creation & scheduling</li>
-                        <li>Captions & hashtag research</li>
-                        <li>Community engagement</li>
-                        <li>Social media reporting</li>
-                        <li>Post designs</li>
+                        <li><i class="fas fa-check"></i>Content creation & scheduling</li>
+                        <li><i class="fas fa-check"></i>Captions & hashtag research</li>
+                        <li><i class="fas fa-check"></i>Community engagement</li>
+                        <li><i class="fas fa-check"></i>Social media reporting</li>
+                        <li><i class="fas fa-check"></i>Post designs</li>
                     </ul>
+                    <div class="service-hover-overlay">
+                        <p>Build your brand presence with strategic social media management</p>
+                    </div>
                 </div>
-                <div class="service-category">
-                    <div class="service-category-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Graphic Design </h3>
+                
+                <div class="service-category" data-service="design">
+                    <div class="service-category-icon">
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Graphic Design</h3>
                     <ul>
-                        <li>Social media graphics</li>
-                        <li>Flyers, posters, and brochures</li>
-                        <li>Simple brand templates</li>
-                        <li>Presentation slides</li>
-                        <li>Branding</li>
+                        <li><i class="fas fa-check"></i>Social media graphics</li>
+                        <li><i class="fas fa-check"></i>Flyers, posters, and brochures</li>
+                        <li><i class="fas fa-check"></i>Simple brand templates</li>
+                        <li><i class="fas fa-check"></i>Presentation slides</li>
+                        <li><i class="fas fa-check"></i>Branding</li>
                     </ul>
+                    <div class="service-hover-overlay">
+                        <p>Create stunning visuals that capture your brand essence</p>
+                    </div>
                 </div>
-                <div class="service-category">
-                    <div class="service-category-icon"><i class="fas fa-laptop-code"></i></div>
+                
+                <div class="service-category" data-service="web">
+                    <div class="service-category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                        <div class="icon-bg"></div>
+                    </div>
                     <h3>Website & Tech Support</h3>
                     <ul>
-                        <li>Business Websites</li>
-                        <li>Portfolio Websites</li>
-                        <li>Landing page creation with CTA</li>
-                        <li>Troubleshooting and updates</li>
-                        <li>Domain and hosting support</li>
+                        <li><i class="fas fa-check"></i>Business Websites</li>
+                        <li><i class="fas fa-check"></i>Portfolio Websites</li>
+                        <li><i class="fas fa-check"></i>Landing page creation with CTA</li>
+                        <li><i class="fas fa-check"></i>Troubleshooting and updates</li>
+                        <li><i class="fas fa-check"></i>Domain and hosting support</li>
                     </ul>
+                    <div class="service-hover-overlay">
+                        <p>Professional web solutions that drive results</p>
+                    </div>
                 </div>
             </div>
             <div class="services-cta">
-                <a href="services.html" class="btn btn-primary">View All Services</a>
+                <a href="services.html" class="btn btn-primary btn-large">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- About Overview Section -->
-    <section class="about-overview">
+    <!-- Enhanced Case Study Section -->
+    <section class="case-study-section">
         <div class="container">
-            <div class="about-overview-content">
-                <div class="about-overview-image">
-                    <img src="/asset/img/blog-1/bg-2.png" alt="Afa-Virtuals Team" class="img-fluid">
-                </div>
-                <div class="about-overview-text">
-                    <h2>Why Choose Us?</h2>
-                    <h3>Because your time is valuable and we treat it that way.</h3>
-                    <p>
-                        We’re not just virtual assistants; we’re reliable partners dedicated to helping your business run smoothly. With customized solutions, consistent communication, and a hands-on team that understands your goals, we make your success our priority. From day-to-day tasks to brain storming to creative support, 
-                        we deliver results that help you focus on what matters most.
-                    </p>
-                    <div class="about-overview-features">
-                        <div class="feature"><i class="fas fa-check-circle"></i> 1 Month Free Trial</div>
-                        <div class="feature"><i class="fas fa-check-circle"></i> Custom Packages</div>
-                        <div class="feature"><i class="fas fa-check-circle"></i> Fast Onboarding</div>
+            <div class="case-study-content">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Success story visualization" class="case-study-img">
+                    <div class="case-study-badge">
+                        <i class="fas fa-trophy"></i>
+                        <span>Success Story</span>
                     </div>
-                    <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                </div>
+                <div class="case-study-text">
+                    <div class="section-badge">Case Study</div>
+                    <h2>How We Helped SmartHub Technologies Scale</h2>
+                    <blockquote>
+                        <p>"Working with Afa-Virtuals was a game-changer. They streamlined our workflows and delivered with serious attention to detail. What stood out most was how quickly they understood our needs and built solutions that actually work."</p>
+                        <cite>
+                            <strong>Ariel Paul</strong>
+                            <span>CEO of SmartHub Technologies</span>
+                        </cite>
+                    </blockquote>
+                    <div class="case-study-results">
+                        <div class="result-item">
+                            <span class="result-number">200%</span>
+                            <span class="result-label">Revenue Growth</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">30hrs</span>
+                            <span class="result-label">Weekly Time Saved</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">85%</span>
+                            <span class="result-label">Process Efficiency</span>
+                        </div>
+                    </div>
+                    <a href="https://portfolio.afavirtuals.com" class="btn btn-outline" target="_blank">
+                        See More Case Studies on Our Portfolio
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Work</h2>
-                <p>See how we’ve helped clients save time, grow, and succeed.</p>
-            </div>
+   <!-- Enhanced Team Section with Portfolio Links -->
+<section class="team-section" id="team">
+    <div class="container">
+        <div class="section-header">
+            <h2>Meet Our Expert Team</h2>
+            <p>Certified professionals dedicated to your success</p>
+        </div>
+        <div class="team-scroll-container">
+            <div class="team-grid">
+                <div class="team-member" data-member="afanyu">
+                    <div class="member-image">
+                        <img src="/asset/img/afa.jpg" alt="Afanyu Emmanuel - Lead Virtual Assistant" class="member-img">
+                        <div class="member-overlay">
+                            <div class="member-preview">
+                                <div class="member-quote">
+                                    <p>"I design systems that turn chaos into clarity"</p>
+                                </div>
+                                <div class="member-specialties">
+                                    <span>System Design</span>
+                                    <span>Web Development</span>
+                                    <span>Process Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Afanyu Emmanuel</h3>
+                        <p class="member-role">Lead Admin VA | Web Designer</p>
+                        <div class="member-badges">
+                            <div class="member-badge">
+                                <i class="fas fa-certificate"></i>
+                                <span>ALX Certified</span>
+                            </div>
+                            <div class="portfolio-link">
+                                <a href="https://portfolio.afavirtuals.com/team/afanyu-emmanuel" target="_blank" class="portfolio-btn">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                     <div class="team-member" data-member="binyu">
+                    <div class="member-image">
+                        <img src="/asset/img/index.jpg" alt="Binyu Gillian - Social Media Manager" class="member-img">
+                        <div class="member-overlay">
+                            <div class="member-preview">
+                                <div class="member-quote">
+                                    <p>"Every task moves with purpose and precision"</p>
+                                </div>
+                                <div class="member-specialties">
+                                    <span>Social Strategy</span>
+                                    <span>Team Leadership</span>
+                                    <span>Project Management</span>
+                                </div>
+                       
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="member-info">
+                        <h3>Binyu Gillian</h3>
+                        <p class="member-role">Admin VA | Social Media Manager</p>
+                        <div class="member-badges">
+                            <div class="member-badge">
+                                <i class="fas fa-certificate"></i>
+                                <span>ALX Certified</span>
+                            </div>
+                            <div class="portfolio-link">
+                                <a href="https://portfolio.afavirtuals.com/team/binyu-gillian" target="_blank" class="portfolio-btn">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member" data-member="shema">
+                    <div class="member-image">
+                        <img src="/asset/img/chris.jpg" alt="Shema Christian - Creative Director" class="member-img">
+                        <div class="member-overlay">
+                            <div class="member-preview">
+                                <div class="member-quote">
+                                    <p>"Beautiful design meets functional development"</p>
+                                </div>
+                                <div class="member-specialties">
+                                    <span>UI/UX Design</span>
+                                    <span>Frontend Development</span>
+                                    <span>Brand Strategy</span>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="member-info">
+                        <h3>Shema Christian</h3>
+                        <p class="member-role">Lead Designer | Web Developer</p>
+                        <div class="member-badges">
+                            <div class="member-badge">
+                                <i class="fas fa-certificate"></i>
+                                <span>ALX Certified</span>
+                            </div>
+                            <div class="portfolio-link">
+                                <a href="https://portfolio.afavirtuals.com/team/shema-christian" target="_blank" class="portfolio-btn">
+                                     <span>Learn More</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
            
-            <div class="portfolio-grid">
-
-                 <div class="portfolio-item web">
-                    <div class="portfolio-img">
-                        <img src="/asset/img/project/business.jpg" alt="Business Website Design">
-                    </div>
-                    <div class="portfolio-info ">
-                        <h3>Abe Pride — Personal Brand System for a Multi-Niche Coach</h3>
-                        <p>Challenge: Abe struggled to communicate his value clearly across three distinct niches coaching, design, and psychology  without confusing potential clients.</p>
-                        <a href="projects.html#abe" class="portfolio-link">Read More</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item admin">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Smarthub Technologies">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>SmartHub Technologies</h3>
-                        <p>Challenge: SmartHub was growing quickly, but their backend operations were chaotic — emails were disorganized, tasks scattered, and internal coordination lacked clarity, causing important things to slip through the cracks.</p>
-                        <a href="projects.html#smarthub" class="portfolio-link">Read More</a>
-                    </div>
-                </div>
-
-                   <div class="portfolio-item admin">
-                    <div class="portfolio-img">
-                        <img src="../asset/img/project/smart-accademy-1.png" alt="Document Management System">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Smart Academy</h3>
-                        <p>Challenge: The client needed a complete admin services setup to organize their operations efficiently from scratch. They lacked a structured system for handling communication, scheduling, and task tracking, leading to workflow inefficiencies and missed deadlines.</p>
-                        <a href="projects.html#smart" class="portfolio-link">Read More</a>
-                    </div>
-                </div>
-             
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-
-    <!-- Client Success Stories -->
-    <section class="success-stories-section">
+    <!-- Enhanced Testimonials Section -->
+    <section class="testimonials enhanced">
         <div class="container">
             <div class="section-header">
-                <h2>Success Stories That Inspire</h2>
-                <p>Behind every project is a human story of growth, relief, and achievement</p>
+                <h2>What Our Clients Say</h2>
+                <p>Real stories from businesses we've helped transform</p>
             </div>
-            
-            <div class="success-stories-grid">
-                <div class="success-story">
-                    <div class="story-image">
-                        <img src="/asset/img/testimonial/dummy.png" alt="Sarah Johnson">
-                    </div>
-                    <div class="story-content">
-                        <div class="story-quote">
-                            <i class="fas fa-quote-left"></i>
-                            <p>""Working with Afa-Virtuals was a game-changer. They streamlined our workflows and delivered with serious attention to detail. What stood out most was how quickly they understood our needs and built solutions that actually work."</p>
-                        </div>
-                        <div class="story-author">
-                            <h4>Ariel Paul</h4>
-                            <span>CEO Of Smarthub</span>
-                        </div>
-                        <div class="story-results">
-                            <div class="story-metric">
-                                <span class="metric-number">200%</span>
-                                <span class="metric-label">Revenue Growth</span>
+            <div class="testimonial-carousel">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-item active">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <div class="story-metric">
-                                <span class="metric-number">30hrs</span>
-                                <span class="metric-label">Weekly Time Saved</span>
+                            <p>"Working with Afa-Virtuals was a game-changer. They streamlined our workflows and delivered with serious attention to detail. What stood out most was how quickly they understood our needs and built solutions that actually work."</p>
+                            <div class="client-info">
+                                <div class="client-avatar">
+                                    <img src="/asset/img/testimonial/dummy.png" alt="Ariel Paul">
+                                </div>
+                                <div class="client-details">
+                                    <h4>Ariel Paul</h4>
+                                    <span>CEO of SmartHub Technologies</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="success-story">
-                    <div class="story-image">
-                        <img src="/asset/img/testimonial/pride.jpg" alt="Michael Chen">
-                    </div>
-                    <div class="story-content">
-                        <div class="story-quote">
-                            <i class="fas fa-quote-left"></i>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
                             <p>"Afa-Virtuals brought my multi-niche brand to life with clarity and style. They understood my vision and created a clean, professional website that perfectly reflects my work across coaching, design, and psychology. Super easy to work with, and the results speak for themselves."</p>
-                        </div>
-                        <div class="story-author">
-                            <h4>Abe Pride</h4>
-                            <span>Affiliate Marketer</span>
-                        </div>
-                        <div class="story-results">
-                            <div class="story-metric">
-                                <span class="metric-number">10x</span>
-                                <span class="metric-label">Team Growth</span>
-                            </div>
-                            <div class="story-metric">
-                                <span class="metric-number">85%</span>
-                                <span class="metric-label">Process Efficiency</span>
+                            <div class="client-info">
+                                <div class="client-avatar">
+                                    <img src="/asset/img/testimonial/pride.jpg" alt="Abe Pride">
+                                </div>
+                                <div class="client-details">
+                                    <h4>Abe Pride</h4>
+                                    <span>Affiliate Marketer & Coach</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-btn next" id="next-testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
+    <!-- Enhanced FAQ Section -->
+    <section class="faq enhanced">
         <div class="container">
             <div class="section-header">
-                <h2>FAQs</h2>
-                <p>Answers to common questions about working with us</p>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about working with us</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>What services do you offer?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <p>What services do you offer?</p>
+                        <span class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                        </span>
                     </div>
                     <div class="faq-answer">
                         <p>We specialize in virtual assistance, social media management, content creation, branding, simple website design, and admin support tailored to small businesses and startups.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>How does the 1-month free trial work?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <p>How does the 1-month free trial work?</p>
+                        <span class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                        </span>
                     </div>
                     <div class="faq-answer">
                         <p>New clients enjoy a 1-month free trial where we handle a selected set of tasks to showcase our value. No payment required — just results. You only pay if you choose to continue.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>How do I get started?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <p>How do I get started?</p>
+                        <span class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                        </span>
                     </div>
                     <div class="faq-answer">
-                        <p>Simply fill out our <a href="#">onboarding</a> form or book a free discovery <a href="#">call</a>. We’ll understand your needs and recommend a custom solution.</p>
+                        <p>Simply fill out our onboarding form or book a free discovery call. We'll understand your needs and recommend a custom solution.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>What is your cancellation policy?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        <p>What is your cancellation policy?</p>
+                        <span class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                        </span>
                     </div>
                     <div class="faq-answer">
-                        <p>You can cancel anytime. If cancellation occurs before the 15th of the month, you’ll receive a 50% refund of the service fee. No refunds are issued after mid-month due to team resource planning.</p>
+                        <p>You can cancel anytime. If cancellation occurs before the 15th of the month, you'll receive a 50% refund of the service fee. No refunds are issued after mid-month due to team resource planning.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Portfolio CTA Banner -->
+  <section class="portfolio-cta-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>Want to see more of what we do?</h2>
+                    <p>Explore our complete portfolio of successful projects and client transformations</p>
+                </div>
+                <div class="banner-cta">
+                    <a href="https://portfolio.afavirtuals.com" class="portfolio-btn portfolio-btn-primary btn-large" target="_blank">
+                        <span>Go to Portfolio</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Pattern -->
+        <div class="banner-bg-pattern"></div>
+        
+        <!-- Geometric Shapes -->
+        <div class="geometric-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact enhanced">
         <div class="container">
             <div class="section-header">
                 <h2>Contact Us</h2>
@@ -452,34 +677,50 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p>Let’s talk about how we can help your business thrive.</p>
+                    <p>Let's talk about how we can help your business thrive.</p>
                     <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
+                        <div class="info-item-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-item-content">
                             <h4>Email</h4>
                             <p><a href="mailto:info@afavirtuals.com">info@afavirtuals.com</a></p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
+                        <div class="info-item-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-item-content">
                             <h4>Phone</h4>
                             <p><a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank">+250 798 971 739</a></p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
+                        <div class="info-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-item-content">
                             <h4>Location</h4>
                             <p>Remote - Available Worldwide</p>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/afavirtuals" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/afavirtuals" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/afa-virtuals" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://tiktok.com/@afavirtuals" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/afavirtuals" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/afavirtuals" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/afa-virtuals" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://tiktok.com/@afavirtuals" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -514,17 +755,18 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         <div id="form-status"></div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-
-    <!-- Call to Action Section -->
-    <section class="final-cta-section">
+    <!-- Enhanced Final CTA Section -->
+    <section class="final-cta-section enhanced">
         <div class="container">
             <div class="cta-content">
                 <div class="cta-image">
@@ -553,12 +795,33 @@
                         </div>
                     </div>
                     
-                    <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="btn-cta">
-                        Get Started Today
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="cta-actions">
+                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="btn-cta primary">
+                            Get Started Today
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="contact-options">
+                            <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="mailto:info@afavirtuals.com" class="contact-btn email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="tel:+250798971739" class="contact-btn phone">
+                                <i class="fas fa-phone"></i>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="cta-bg-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
         </div>
     </section>
 
@@ -567,7 +830,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="asset/img/logo/main-2.png" alt="Afa-Virtuals Logo" class="site-logo"></a>
+                    <a href="index.html">
+                        <img src="/asset/img/logo/main-2.png" alt="Afa-Virtuals Logo" class="site-logo">
+                    </a>
                     <p>Professional Virtual Assistant Services</p>
                 </div>
                 <div class="footer-links">
@@ -578,7 +843,7 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                         <li><a href="legal.html">Privacy Policy</a></li>
                     </ul>
                 </div>
@@ -600,32 +865,36 @@
                         <li><i class="fas fa-map-marker-alt"></i> Remote - Available Worldwide</li>
                     </ul>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/afavirtuals" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/afavirtuals" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/afa-virtuals" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://tiktok.com/@afavirtuals" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/afavirtuals" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/afavirtuals" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/afa-virtuals" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://tiktok.com/@afavirtuals" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    
     <div class="footer-bottom">
         <p>&copy; 2025 Afa-Virtuals. Crafted with care by the Afa-Virtuals Team. All rights reserved.</p>
     </div>
+
+    <!-- Back to Top Button -->
+    <a href="index.html#home" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <script src="/asset/js/main.js"></script>
-    <script>
-    // Preloader fade out effect
-    window.addEventListener('load', function() {
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
-            preloader.style.transition = 'opacity 0.7s';
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 2000);
-        }
-    });
-    </script>
 </body>
 </html>

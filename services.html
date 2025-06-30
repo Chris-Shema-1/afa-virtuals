@@ -85,11 +85,23 @@
     </style>
 </head>
 <body>
-   <header id="header">
+ 
+        <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <p class="preloader-slogan">Your task, our priority</p>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Main Navigation">
                 <div class="logo">
-                    <a href="index.html"><img src="asset/img/logo/main.png" alt="Afa-Virtuals Logo" class="site-logo"></a>
+                    <a href="index.html">
+                        <img src="/asset/img/logo/main.png" alt="Afa-Virtuals company logo" class="site-logo">
+                    </a>
                 </div>
                 <div class="menu-toggle" id="mobile-menu">
                     <span class="bar"></span>
@@ -98,11 +110,11 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services-test.html" class="nav-link active">Services</a></li>
-                    <li><a href="projects.html" class="nav-link ">Projects</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="index.html#team" class="nav-link">Team</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -803,8 +815,8 @@
 </section>
  
 
-   <!-- Call to Action Section -->
-    <section class="final-cta-section">
+    <!-- Enhanced Final CTA Section -->
+    <section class="final-cta-section enhanced">
         <div class="container">
             <div class="cta-content">
                 <div class="cta-image">
@@ -833,20 +845,44 @@
                         </div>
                     </div>
                     
-                    <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="btn-cta">
-                        Get Started Today
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="cta-actions">
+                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="btn-cta primary">
+                            Get Started Today
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="contact-options">
+                            <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="mailto:info@afavirtuals.com" class="contact-btn email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="tel:+250798971739" class="contact-btn phone">
+                                <i class="fas fa-phone"></i>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="cta-bg-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="asset/img/logo/main-2.png" alt="Afa-Virtuals Logo" class="site-logo"></a>
+                    <a href="index.html">
+                        <img src="/asset/img/logo/main-2.png" alt="Afa-Virtuals Logo" class="site-logo">
+                    </a>
                     <p>Professional Virtual Assistant Services</p>
                 </div>
                 <div class="footer-links">
@@ -854,21 +890,21 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="services-test.html">Services</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                         <li><a href="legal.html">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-services">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="services-test.html#administrative">Administrative Support</a></li>
-                        <li><a href="services-test.html#tech">Tech Support & Solutions</a></li>
-                        <li><a href="services-test.html#web">Web Design</a></li>
-                        <li><a href="services-test.html#social">Social Media Management</a></li>
-                        <li><a href="services-test.html#packages">Service Packages</a></li>
+                        <li><a href="services.html#administrative">Administrative Support</a></li>
+                        <li><a href="services.html#tech">Tech Support & Solutions</a></li>
+                        <li><a href="services.html#web">Web Design</a></li>
+                        <li><a href="services.html#social">Social Media Management</a></li>
+                        <li><a href="services.html#packages">Service Packages</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -879,21 +915,36 @@
                         <li><i class="fas fa-map-marker-alt"></i> Remote - Available Worldwide</li>
                     </ul>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/afavirtuals" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/afavirtuals" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/afa-virtuals" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://tiktok.com/@afavirtuals" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/afavirtuals" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://forms.gle/PK3R7t5zFqLZwzQq6" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/afavirtuals" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/afa-virtuals" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://tiktok.com/@afavirtuals" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
-        
     </footer>
+    
     <div class="footer-bottom">
         <p>&copy; 2025 Afa-Virtuals. Crafted with care by the Afa-Virtuals Team. All rights reserved.</p>
     </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <script src="/asset/js/main.js"></script>
 </body>
 </html>
