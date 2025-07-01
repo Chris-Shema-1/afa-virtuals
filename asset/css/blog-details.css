@@ -22,6 +22,16 @@
   --hero-gradient: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
 /* ===== BLOG POST HERO WITH ENHANCED ANIMATIONS ===== */
 .blog-post-hero {
   min-height: 80vh;
