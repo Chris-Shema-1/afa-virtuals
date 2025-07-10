@@ -1106,3 +1106,110 @@
     text-align: center;
   }
 }
+
+
+.team-modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(31,41,55,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+.team-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  max-width: 500px;
+  width: 95vw;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  position: relative;
+  animation: fadeInModal 0.3s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.team-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 2.2rem;
+  color: #f97316;
+  cursor: pointer;
+  font-weight: bold;
+}
+.team-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.team-modal-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f97316;
+}
+.team-modal-body {
+  font-size: 1.4rem;
+  color: #374151;
+}
+.team-modal-skills, .team-modal-certificates, .team-modal-contact {
+  margin: 0.7rem 0 1.2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.skill-item {
+  background: #f3f4f6;
+  color: #f97316;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.certificate-item {
+  background: #f8fafc;
+  border: 1px solid #f97316;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.certificate-image {
+  width: 50px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.certificate-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+.certificate-issuer {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #374151;
+  font-size: 1.2rem;
+}
+@media (max-width: 600px) {
+  .team-modal-content { padding: 1.2rem 0.5rem; }
+  .team-modal-header { flex-direction: column; gap: 0.7rem; }
+  .team-modal-img { width: 70px; height: 70px; }
+}

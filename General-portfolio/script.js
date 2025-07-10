@@ -366,49 +366,7 @@ function closeWorkModal() {
   document.getElementById("workModal").style.display = "none"
 }
 
-// Certificate Viewing
-function viewCertificate(certId) {
-  const modal = document.getElementById("certificateModal")
-  const modalContent = document.getElementById("certificateContent")
 
-  // Certificate data for each team member
-  const certificates = {
-    'sarah-alx': {
-      name: 'Afanyu Emmanuel Delonie',
-      title: 'ALX Virtual Assistant Certification',
-      img: '/asset/img/va-cirtificate.jpg',
-      desc: 'Certified by ALX for excellence in virtual assistance, business operations, and client management.'
-    },
-    'michael-alx': {
-      name: 'Shema Christian',
-      title: 'ALX Creative Virtual Assistant Certification',
-      img: '/asset/img/va-chris.png',
-      desc: 'Certified by ALX for creative virtual assistance, design, and digital marketing.'
-    },
-    'priya-alx': {
-      name: 'Binyu Gillian Renyu',
-      title: 'ALX Virtual Assistant Certification',
-      img: '/asset/img/va-gill.jpg',
-      desc: 'Certified by ALX for administrative support, social media management, and team leadership.'
-    }
-  }
-
-  const cert = certificates[certId]
-  if (cert) {
-    modalContent.innerHTML = `
-      <h2>${cert.title}</h2>
-      <div style="text-align: center;">
-        <img src="${cert.img}" alt="${cert.title}" style="width: 100%; max-width: 500px; border-radius: 0.5rem;">
-        <p style="margin-top: 1rem; color: var(--text-light);">${cert.desc}</p>
-        <p style="margin-top: 0.5rem; font-weight: 600; color: var(--primary-color);">${cert.name}</p>
-      </div>
-    `
-  } else {
-    modalContent.innerHTML = `<p>Certificate not found.</p>`
-  }
-
-  modal.style.display = "block"
-}
 
 function closeCertificateModal() {
   document.getElementById("certificateModal").style.display = "none"

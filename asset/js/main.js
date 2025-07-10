@@ -1,3 +1,113 @@
+// ===== CASE STUDY CAROUSEL LOGIC =====
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('caseStudyCarousel');
+  if (!carousel) return;
+  const slides = carousel.querySelectorAll('.case-study-slide');
+  const prevBtn = document.getElementById('caseStudyPrev');
+  const nextBtn = document.getElementById('caseStudyNext');
+  let current = 0;
+  let autoScrollTimer = null;
+
+  function showSlide(idx) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === idx);
+    });
+    carousel.style.transform = `translateX(-${idx * 100}%)`;
+    current = idx;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+    resetAutoScroll();
+  }
+  function prevSlide() {
+    showSlide((current - 1 + slides.length) % slides.length);
+    resetAutoScroll();
+  }
+
+  function resetAutoScroll() {
+    if (autoScrollTimer) clearInterval(autoScrollTimer);
+    autoScrollTimer = setInterval(() => {
+      showSlide((current + 1) % slides.length);
+    }, 30000);
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+  // Touch/drag support (optional, basic)
+  let startX = null;
+  carousel.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+  carousel.addEventListener('touchend', e => {
+    if (startX === null) return;
+    let endX = e.changedTouches[0].clientX;
+    if (endX - startX > 50) prevSlide();
+    else if (startX - endX > 50) nextSlide();
+    startX = null;
+  });
+
+  showSlide(0);
+  resetAutoScroll();
+});
+// ===== RESULTS SECTION ANIMATION =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Clients Served
+  var elClients = document.getElementById('clientsCount');
+  var targetClients = 4;
+  var duration = 1200;
+  var startClients = 0;
+  var startTimeClients = null;
+  function animateClients(ts) {
+    if (!startTimeClients) startTimeClients = ts;
+    var progress = Math.min((ts - startTimeClients) / duration, 1);
+    var value = Math.floor(progress * (targetClients - startClients) + startClients);
+    elClients.textContent = value;
+    if (progress < 1) {
+      requestAnimationFrame(animateClients);
+    } else {
+      elClients.textContent = targetClients;
+    }
+  }
+  if (elClients) requestAnimationFrame(animateClients);
+
+  // Success Rate
+  var elSuccess = document.getElementById('successRate');
+  var targetSuccess = 98;
+  var startSuccess = 0;
+  var startTimeSuccess = null;
+  function animateSuccess(ts) {
+    if (!startTimeSuccess) startTimeSuccess = ts;
+    var progress = Math.min((ts - startTimeSuccess) / duration, 1);
+    var value = Math.floor(progress * (targetSuccess - startSuccess) + startSuccess);
+    elSuccess.textContent = value + '%';
+    if (progress < 1) {
+      requestAnimationFrame(animateSuccess);
+    } else {
+      elSuccess.textContent = targetSuccess + '%';
+    }
+  }
+  if (elSuccess) requestAnimationFrame(animateSuccess);
+
+  // Hours Saved
+  var elHours = document.getElementById('hoursSaved');
+  var targetHours = 500;
+  var startHours = 0;
+  var startTimeHours = null;
+  function animateHours(ts) {
+    if (!startTimeHours) startTimeHours = ts;
+    var progress = Math.min((ts - startTimeHours) / duration, 1);
+    var value = Math.floor(progress * (targetHours - startHours) + startHours);
+    elHours.textContent = value;
+    if (progress < 1) {
+      requestAnimationFrame(animateHours);
+    } else {
+      elHours.textContent = targetHours;
+    }
+  }
+  if (elHours) requestAnimationFrame(animateHours);
+});
 document.addEventListener("DOMContentLoaded", () => {
   // Preloader
   setTimeout(() => {
