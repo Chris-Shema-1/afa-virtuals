@@ -436,6 +436,171 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Afa-Virtuals website loaded successfully!")
 })
 
+// === Team Member Modal Logic ===
+const teamMembers = {
+    afanyu: {
+        name: "Afanyu Emmanuel",
+        role: "Lead Admin VA | Web Designer",
+        image: "/asset/img/afa.jpg",
+        bio: "Experienced Virtual Assistant and Web Designer with over 5 years in the industry. Specializes in administrative tasks, client management, and creating stunning web experiences. ALX certified professional with a passion for helping businesses streamline their operations.",
+        experience: "Over 5 years of experience in virtual assistance and web design. Has worked with 50+ clients across various industries including e-commerce, healthcare, and technology. Expert in project management, client communication, and digital marketing strategies.",
+        skills: [
+            "Administrative Support",
+            "Web Design",
+            "Project Management",
+            "Client Relations",
+            "Digital Marketing",
+            "Content Creation",
+            "Email Management",
+            "Data Entry"
+        ],
+        certificates: [
+            {
+                name: "ALX Virtual Assistant Certification",
+                issuer: "ALX Africa",
+                image: "/asset/img/va-cirtificate.jpg"
+            },
+        ],
+        contact: {
+            email: "afanyu@afavirtuals.com",
+            phone: "+250 788 123 456",
+            linkedin: "linkedin.com/in/afanyu-emmanuel"
+        }
+    },
+    binyu: {
+        name: "Binyu Gillian",
+        role: "Admin VA | Social Media Manager",
+        image: "/asset/img/index.jpg",
+        bio: "Creative Social Media Manager and Administrative Virtual Assistant with expertise in content creation, community management, and brand development. ALX certified with a keen eye for trends and audience engagement strategies.",
+        experience: "4+ years of experience in social media management and virtual assistance. Has managed social media accounts for 30+ brands, increasing engagement by an average of 150%. Skilled in content strategy, community building, and digital marketing campaigns.",
+        skills: [
+            "Social Media Management",
+            "Content Creation",
+            "Community Management",
+            "Brand Development",
+            "Graphic Design",
+            "Analytics & Reporting",
+            "Customer Service",
+            "Administrative Support"
+        ],
+        certificates: [
+            {
+                name: "ALX Social Media Certification",
+                issuer: "ALX Africa",
+                image: "/asset/img/va-gill.jpg"
+            },
+        ],
+        contact: {
+            email: "binyu@afavirtuals.com",
+            phone: "+250 788 234 567",
+            linkedin: "linkedin.com/in/binyu-gillian"
+        }
+    },
+    shema: {
+        name: "Shema Christian",
+        role: "Lead Designer | Web Developer",
+        image: "/asset/img/chris.jpg",
+        bio: "Full-stack developer and creative designer with expertise in modern web technologies and user experience design. ALX certified professional passionate about creating innovative digital solutions that drive business growth.",
+        experience: "6+ years of experience in web development and design. Has developed 100+ websites and applications for clients worldwide. Expert in full-stack development, UI/UX design, and digital transformation strategies.",
+        skills: [
+            "Web Development",
+            "UI/UX Design",
+            "Full-Stack Development",
+            "Mobile App Development",
+            "Database Management",
+            "API Development",
+            "Cloud Computing",
+            "DevOps"
+        ],
+        certificates: [
+            {
+                name: "ALX Full-Stack Development",
+                issuer: "ALX Africa",
+                image: "/asset/img/va-chris.png"
+            },
+        ],
+        contact: {
+            email: "shema@afavirtuals.com",
+            phone: "+250 788 345 678",
+            linkedin: "linkedin.com/in/shema-christian"
+        }
+    }
+};
+
+function openModal(memberKey) {
+    const member = teamMembers[memberKey];
+    const modal = document.getElementById('memberModal');
+    // Populate modal content
+    document.getElementById('modalMemberImage').src = member.image;
+    document.getElementById('modalMemberImage').alt = member.name;
+    document.getElementById('modalMemberName').textContent = member.name;
+    document.getElementById('modalMemberRole').textContent = member.role;
+    document.getElementById('modalMemberBio').textContent = member.bio;
+    document.getElementById('modalMemberExperience').textContent = member.experience;
+    // Populate skills
+    const skillsContainer = document.getElementById('modalMemberSkills');
+    skillsContainer.innerHTML = '';
+    member.skills.forEach(skill => {
+        const skillItem = document.createElement('div');
+        skillItem.className = 'skill-item';
+        skillItem.innerHTML = `<strong>${skill}</strong>`;
+        skillsContainer.appendChild(skillItem);
+    });
+    // Populate certificates
+    const certificatesContainer = document.getElementById('modalMemberCertificates');
+    certificatesContainer.innerHTML = '';
+    member.certificates.forEach(cert => {
+        const certItem = document.createElement('div');
+        certItem.className = 'certificate-item';
+        certItem.innerHTML = `
+            <img src="${cert.image}" alt="${cert.name}" class="certificate-image">
+            <div class="certificate-name">${cert.name}</div>
+            <div class="certificate-issuer">${cert.issuer}</div>
+        `;
+        certificatesContainer.appendChild(certItem);
+    });
+    // Populate contact info
+    const contactContainer = document.getElementById('modalMemberContact');
+    contactContainer.innerHTML = `
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>${member.contact.email}</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>${member.contact.phone}</span>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <span>${member.contact.linkedin}</span>
+        </div>
+    `;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('memberModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+// Close modal when clicking outside
+if (document.getElementById('memberModal')) {
+    document.getElementById('memberModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+}
+// Close modal with Escape key
+if (typeof document !== 'undefined') {
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+}
+
 // Additional utility functions
 function debounce(func, wait) {
   let timeout

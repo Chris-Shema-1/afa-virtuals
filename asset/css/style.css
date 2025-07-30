@@ -59,6 +59,109 @@
     min-width: 100vw;
   }
 }
+
+
+/* ===== SIMPLE TESTIMONIALS ===== */
+.simple-testimonials-section {
+  background: var(--light-color);
+}
+
+.simple-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 4rem;
+}
+
+.simple-testimonial {
+  background: white;
+  padding: 4rem;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(249, 115, 22, 0.1);
+  text-align: center;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.simple-testimonial::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  font-size: 6rem;
+  color: var(--primary-color);
+  opacity: 0.2;
+  font-family: serif;
+}
+
+.simple-testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.simple-testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 2rem;
+  border: 3px solid var(--primary-color);
+}
+
+.simple-testimonial-quote {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: var(--gray-color);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+}
+
+.simple-testimonial-author {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.simple-testimonial-role {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .hero-container,
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .about-text h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .simple-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ===== RESULTS SECTION ===== */
 .results-section {
   position: relative;
@@ -1512,5 +1615,114 @@ header {
   main, .hero, .about-section, .services-section, .portfolio-section, .process-section {
     min-height: 70vh;
   }
+}
+
+/* === Team Member Modal Styles === */
+.team-modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(31,41,55,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+.team-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  max-width: 500px;
+  width: 95vw;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  position: relative;
+  animation: fadeInModal 0.3s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.team-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 2.2rem;
+  color: #f97316;
+  cursor: pointer;
+  font-weight: bold;
+}
+.team-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.team-modal-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f97316;
+}
+.team-modal-body {
+  font-size: 1.4rem;
+  color: #374151;
+}
+.team-modal-skills, .team-modal-certificates, .team-modal-contact {
+  margin: 0.7rem 0 1.2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.skill-item {
+  background: #f3f4f6;
+  color: #f97316;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.certificate-item {
+  background: #f8fafc;
+  border: 1px solid #f97316;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 350px;
+}
+.certificate-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.certificate-name {
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+}
+.certificate-issuer {
+  color: #6b7280;
+  font-size: 1.1rem;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .team-modal-content { padding: 1.2rem 0.5rem; }
+  .team-modal-header { flex-direction: column; gap: 0.7rem; }
+  .team-modal-img { width: 70px; height: 70px; }
+  .certificate-item { max-width: 98vw; }
+  .certificate-image { max-width: 98vw; }
 }
 

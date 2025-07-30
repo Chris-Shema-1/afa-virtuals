@@ -1,3 +1,77 @@
+
+
+// === Animated Zig-Zag Roadmap for Process Section (Car Animation) ===
+document.addEventListener('DOMContentLoaded', function() {
+  var processGrid = document.querySelector('.process-grid');
+  if (!processGrid) return;
+  var steps = Array.from(processGrid.querySelectorAll('.process-step'));
+  if (steps.length < 2) return;
+  // Insert SVG road between card edges (zig-zag)
+  var road = document.createElement('div');
+  road.className = 'process-roadmap-road';
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('height', '100%');
+  var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('stroke-width', '8');
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke-linecap', 'round');
+  svg.appendChild(path);
+  road.appendChild(svg);
+  processGrid.appendChild(road);
+  // Insert car icon
+  var car = document.createElement('div');
+  car.className = 'process-roadmap-car';
+  car.innerHTML = '<i class="fas fa-car"></i>';
+  processGrid.appendChild(car);
+  // Calculate card edge positions and draw curved zig-zag road
+  function updateRoad() {
+    var gridRect = processGrid.getBoundingClientRect();
+    var points = steps.map(function(step, i) {
+      var rect = step.getBoundingClientRect();
+      var x = (i % 2 === 0) ? rect.left - gridRect.left : rect.right - gridRect.left;
+      var y = rect.top - gridRect.top + rect.height/2;
+      return {x: x, y: y};
+    });
+    // Build a curved zig-zag path
+    var d = '';
+    for (var i = 0; i < points.length; i++) {
+      if (i === 0) {
+        d += 'M' + points[i].x + ',' + points[i].y;
+      } else {
+        // Use cubic Bezier for curve between points
+        var prev = points[i-1];
+        var midX = (prev.x + points[i].x)/2;
+        var midY = (prev.y + points[i].y)/2 + ((i%2===0)?-40:40);
+        d += ' Q' + midX + ',' + midY + ' ' + points[i].x + ',' + points[i].y;
+      }
+    }
+    path.setAttribute('d', d);
+    // Store points for car animation
+    car._roadPoints = points;
+  }
+  window.addEventListener('resize', updateRoad);
+  setTimeout(updateRoad, 100);
+  // Animation logic
+  var current = 0;
+  function activateStep(idx) {
+    steps.forEach(function(step, i) {
+      step.classList.toggle('active', i === idx);
+    });
+    // Move the car to the edge of the active step
+    var points = car._roadPoints || [];
+    if (points.length === steps.length) {
+      var pt = points[idx];
+      car.style.left = pt.x - 24 + 'px';
+      car.style.top = pt.y - 24 + 'px';
+    }
+  }
+  activateStep(current);
+  setInterval(function() {
+    current = (current + 1) % steps.length;
+    activateStep(current);
+  }, 20000);
+});
 // ===== PORTFOLIO HOMEPAGE JAVASCRIPT =====
 document.addEventListener("DOMContentLoaded", () => {
   // Preloader
