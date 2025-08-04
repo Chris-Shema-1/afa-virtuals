@@ -15,6 +15,60 @@ function debounce(func, wait) {
     };
 }
 
+
+//==============================================================================
+// contact us function
+//==============================================================================
+
+  const form = document.getElementById("contact-form");
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwnNVV2XKcaLur09pts3PLa-DWxg7LqsQGvCRz50ueWw6upy7ubm6ynd0VdmyPsj6pt/exec";
+  const statusDiv = document.getElementById("form-status");
+  const successMessage = document.getElementById("success-message");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Show sending message
+    statusDiv.innerText = "Sending...";
+    statusDiv.className = "alert-success";
+    statusDiv.style.display = "block";
+
+    const formData = new FormData(form);
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((result) => {
+        console.log("Success:", result);
+        form.reset();
+
+        successMessage.className = "alert-success";
+        successMessage.style.display = "block";
+        successMessage.innerText = "✅ Thank you! Your message was submitted.";
+
+        statusDiv.style.display = "none";
+
+        // Auto-hide success after 5 seconds
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 5000);
+      })
+      .catch((error) => {
+        console.error("Error!", error.message);
+
+        statusDiv.className = "alert-error";
+        statusDiv.innerText = "❌ Failed to send message. Please try again.";
+        statusDiv.style.display = "block";
+
+        // Auto-hide error after 5 seconds
+        setTimeout(() => {
+          statusDiv.style.display = "none";
+        }, 5000);
+      });
+  });
+
 // =============================================================================
 // MODAL FUNCTIONALITY
 // =============================================================================
