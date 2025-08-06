@@ -21,3 +21,8 @@ Allow: /
 
 # Crawl delay (optional)
 Crawl-delay: 1 
+
+# Allow important resources
+Allow: /asset/css/
+Allow: /asset/js/
+Allow: /asset/img/
