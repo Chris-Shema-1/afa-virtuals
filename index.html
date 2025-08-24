@@ -268,7 +268,7 @@
     <meta name="real-estate-technology" content="PropTech, real estate automation, CRM integration, lead management systems">
 
     <!-- CSS Links -->
-    <link rel="stylesheet" href="/asset/css/style.css">
+    <!-- <link rel="stylesheet" href="/asset/css/style.css"> -->
     <link rel="stylesheet" href="/asset/css/index.css">
     <link rel="stylesheet" href="/asset/css/volkov.css">
     <link rel="stylesheet" href="/asset/css/services-redesigned.css">
@@ -282,12 +282,12 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader">
             <div class="loader-inner"></div>
         </div>
         <p class="preloader-slogan">Your task, our priority</p>
-    </div>
+    </div> -->
 
     <!-- Header -->
     <header id="header">
@@ -304,15 +304,22 @@
                     <span class="bar"></span>
                 </div>
            
-                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="index.html#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="index.html#team" class="nav-link">Portfolio</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#latest-news" class="nav-link">Blog</a></li>
-                </ul>
+                  <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="index.html#team" class="nav-link">Portfolio</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="#latest-news" class="nav-link">Blog</a></li>
+                    </ul>
+                    
+                    <!-- CTA Button for Mobile (inside the mobile menu) -->
+                    <a href="#get-started" class="nav-cta-button mobile-cta">Get Started</a>
+                </div>
 
+                <!-- CTA Button for Desktop (always visible) -->
+                <a href="#get-started" class="nav-cta-button desktop-cta">Get Started</a>
             
             </nav>
         </div>
@@ -331,7 +338,7 @@
     <div class="container hero-content-wrapper">
         <div class="hero-flex" id="home">
             <div class="hero-content">
-                <div class="hero-badge">Premium Virtual Assistant Services</div>
+                <div class="hero-badge">Premium AI Automation Solutions</div>
                 
                 <!-- SEO-Optimized H1 for AI & Search Engines -->
                 <h1 style="display: none;">Business Automation and Virtual Assistant Support for Coaches, Real Estate Agents, and Small Service Providers in the US, Canada, Europe, and the UAE</h1>
@@ -345,7 +352,7 @@
                 
                 <!-- Enhanced Subheadline with Geo-targeting -->
                  
-                <p class="problem-focused-subtitle">We build automated systems that capture and nurture leads 24/7 - so you never lose a deal to faster follow-up again</p>
+                <p class="problem-focused-subtitle">Turn your biggest business bottleneck into your competitive advantage. Our AI automation handles the busy work so you can focus on what you do best—closing deals.</p>
                 
                 <a href="https://forms.gle/VrYcahZMHVZGFfXw5" class="cta-primary" target="_blank" rel="noopener">
                     Start Your Free Audit
@@ -395,74 +402,175 @@
 
 
     <!-- Pain Points Section -->
- <section class="lead-bleeding-section">
+  <section class="pain-points-section">
         <div class="container">
-            <div class="pain-section-header">
-                <h2 class="pain-section-title">
-                    Why 73% of<span class="pain-highlight"> Real Estate Leads</span> Never Convert
-                </h2>
-                <p class="section-subtitle" style="font-size: 1.6rem;">
-                    The painful reality most realtors face
-                </p>
+            <!-- Hero Section -->
+            <div class="section-hero">
+                <div class="hero-content">
+                    <div class="section-badge">
+                        ⚡ Market Reality Check
+                    </div>
+                    <h2 class="section-title">
+                        Why 73% of <span class="highlight">Real Estate Leads</span> Never Convert
+                    </h2>
+                    <p class="section-subtitle">
+                        The harsh truth about what's killing your lead conversion and costing you six-figure commissions every month.
+                    </p>
+                    
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-number">$127K</span>
+                            <span class="stat-label">Average Lost Revenue</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.7x</span>
+                            <span class="stat-label">Competition Advantage</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">73%</span>
+                            <span class="stat-label">Wasted Leads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <div class="visual-overlay">
+                            <div class="visual-icon">📉</div>
+                            <div class="visual-text">Lead Conversion Crisis</div>
+                            <div class="visual-subtext">Your competition is winning</div>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-element">💔</div>
+                        <div class="floating-element">📱</div>
+                        <div class="floating-element">⏰</div>
+                    </div>
+                </div>
             </div>
 
-            <div class="issues-grid">
-                <div class="issue-card">
-                    <div class="bleeding-icon"></div>
-                    <div class="issue-number">1</div>
-                    <h3 class="issue-title"> Leads Go Cold While You Sleep</h3>
-                    <p class="issue-description">
-                        Your competition has 24/7 chatbots capturing leads at midnight while your contact form sits empty. By morning, hot prospects have already connected with faster-responding agents.
+            <!-- Pain Points Grid -->
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-header">
+                        <div class="pain-number">1</div>
+                        <div class="pain-severity">
+                            <div class="severity-label">Critical</div>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="pain-title">Leads Go Cold While You Sleep</h3>
+                    <p class="pain-description">
+                        Your competition has 24/7 AI chatbots capturing leads at midnight while your contact form sits empty. By morning, hot prospects have already connected with faster-responding agents.
                     </p>
+                    <div class="pain-impact">
+                        <div class="impact-label">💸 Revenue Impact</div>
+                        <div class="impact-text">Missing night leads costs top agents $40K+ annually</div>
+                    </div>
                 </div>
 
-                <div class="issue-card">
-                    <div class="bleeding-icon"></div>
-                    <div class="issue-number">2</div>
-                    <h3 class="issue-title">Generic Websites That Blend In</h3>
-                    <p class="issue-description">
-                       Buyers can't tell you apart from the 50 other agents in your area. Your website looks like a template, your branding is forgettable, and your value proposition is invisible.
+                <div class="pain-card">
+                    <div class="pain-header">
+                        <div class="pain-number">2</div>
+                        <div class="pain-severity">
+                            <div class="severity-label">High</div>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="pain-title">Generic Websites That Blend In</h3>
+                    <p class="pain-description">
+                        Buyers can't tell you apart from the 50 other agents in your area. Your website looks like a template, your branding is forgettable, and your value proposition is invisible.
                     </p>
+                    <div class="pain-impact">
+                        <div class="impact-label">🎯 Market Impact</div>
+                        <div class="impact-text">Premium listings go to agents with professional presence</div>
+                    </div>
                 </div>
 
-                <div class="issue-card">
-                    <div class="bleeding-icon"></div>
-                    <div class="issue-number">3</div>
-                    <h3 class="issue-title">Manual Follow-Up Chaos</h3>
-                    <p class="issue-description">
+                <div class="pain-card">
+                    <div class="pain-header">
+                        <div class="pain-number">3</div>
+                        <div class="pain-severity">
+                            <div class="severity-label">Severe</div>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="pain-title">Manual Follow-Up Chaos</h3>
+                    <p class="pain-description">
                         You're spending 3 hours daily on admin tasks instead of showing properties and closing deals. Every minute on paperwork is a minute not building relationships with buyers and sellers.
                     </p>
+                    <div class="pain-impact">
+                        <div class="impact-label">⏱️ Time Impact</div>
+                        <div class="impact-text">15+ hours weekly lost to manual processes</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="issues-grid">
-                <div class="issue-card">
-                    <div class="bleeding-icon"></div>
-                    <div class="issue-number">4</div>
-                    <h3 class="issue-title"> Missed Opportunities</h3>
-                    <p class="issue-description">
+                <div class="pain-card">
+                    <div class="pain-header">
+                        <div class="pain-number">4</div>
+                        <div class="pain-severity">
+                            <div class="severity-label">Critical</div>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="pain-title">Missed Opportunities Everywhere</h3>
+                    <p class="pain-description">
                         Hot leads slip through the cracks because your systems don't automatically nurture prospects. One missed follow-up can cost you a $50,000 commission.
                     </p>
+                    <div class="pain-impact">
+                        <div class="impact-label">💰 Lost Revenue</div>
+                        <div class="impact-text">Single missed lead = $25K-$75K lost commission</div>
+                    </div>
                 </div>
 
-                <div class="issue-card">
-                    <div class="bleeding-icon"></div>
-                    <div class="issue-number">5</div>
-                    <h3 class="issue-title">Zero Brand Recognition</h3>
-                    <p class="issue-description">
-                       Your marketing looks amateur compared to top-producing agents with professional branding. Luxury sellers won't trust you with their $2M listing if you look like a part-timer.
+                <div class="pain-card">
+                    <div class="pain-header">
+                        <div class="pain-number">5</div>
+                        <div class="pain-severity">
+                            <div class="severity-label">High</div>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="pain-title">Zero Brand Recognition</h3>
+                    <p class="pain-description">
+                        Your marketing looks amateur compared to top-producing agents with professional branding. Luxury sellers won't trust you with their $2M listing if you look like a part-timer.
                     </p>
+                    <div class="pain-impact">
+                        <div class="impact-label">🏆 Market Position</div>
+                        <div class="impact-text">Premium clients choose agents with premium presence</div>
+                    </div>
                 </div>
 
-                <div class="issue-card">
-                    <div class="bleeding-icon"></div>
-                    <div class="issue-number">6</div>
-                    <h3 class="issue-title"> No Competitive Edge</h3>
-                    <p class="issue-description">
-                       While you're manually managing leads in spreadsheets, your competition is using AI to qualify prospects, automate follow-ups, and close deals faster than ever.
+                <div class="pain-card">
+                    <div class="pain-header">
+                        <div class="pain-number">6</div>
+                        <div class="pain-severity">
+                            <div class="severity-label">Extreme</div>
+                            <div class="severity-bar">
+                                <div class="severity-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="pain-title">No Competitive Edge</h3>
+                    <p class="pain-description">
+                        While you're manually managing leads in spreadsheets, your competition is using AI to qualify prospects, automate follow-ups, and close deals faster than ever.
                     </p>
+                    <div class="pain-impact">
+                        <div class="impact-label">⚡ Competition Gap</div>
+                        <div class="impact-text">Tech-enabled agents close 3x more deals</div>
+                    </div>
                 </div>
-
+            </div>
         </div>
     </section>
 
@@ -473,7 +581,7 @@
       <div class="about-overview-text">
         <div class="section-badge">About Us</div>
         <h2 class="pain-section-title">
-          More Than a Service <span class="pain-highlight">Your Experienced Problem Solvers</span>
+          More Than a Service <span class="pain-highlight">Your Experienced </span> Problem Solvers
         </h2>
         <p>
           Behind every growing business is hidden friction: system gaps, inbox overload, content chaos, and scaling problems. We don’t just fix tasks we solve what’s holding you back.
@@ -509,7 +617,7 @@
           </div>
         </div>
 
-        <a href="#contact" class="btn btn-primary">Learn More About Our Process</a>
+        <a href="#contact" class="btn-primary ">Learn More About Our Process</a>
       </div>
       <div class="about-overview-image">
         <img src="/asset/img/afa.jpg" alt="Afa‑Virtuals Collaborating with Clients" class="img-fluid">
@@ -528,7 +636,7 @@
         <div class="container">
             <div class="solution-grid">
                 <div class="solution-content">
-                    <h2>The Complete Real Estate Automation System</h2>
+                    <h2>The Complete <span class="pain-highlight">Real Estate Automation</span> System</h2>
                     <p>Transform your real estate business with our proven automation framework that handles lead capture, nurturing, transaction management, and client service while you focus on closing deals.</p>
                     
                     <ul class="benefits-list">
@@ -554,19 +662,19 @@
                             <h4 style="margin-bottom: 20px; color: #1e293b;">Your Automation Dashboard</h4>
                             <div class="metric-row">
                                 <span class="metric-label">Leads Generated This Month</span>
-                                <p class="metric-value">143</p>
+                                <p class="sol-metric-value">143</p>
                             </div>
                             <div class="metric-row">
                                 <span class="metric-label">Response Time Average</span>
-                                <p class="metric-value">47 seconds</p>
+                                <p class="sol-metric-value">47 seconds</p>
                             </div>
                             <div class="metric-row">
                                 <span class="metric-label">Deals in Pipeline</span>
-                                <p class="metric-value">23</p>
+                                <p class="sol-metric-value">23</p>
                             </div>
                             <div class="metric-row">
                                 <span class="metric-label">Time Saved This Week</span>
-                                <p class="metric-value">18.5 hours</p>
+                                <p class="sol-metric-value">18.5 hours</p>
                             </div>
                         </div>
                     </div>
@@ -623,7 +731,7 @@
                     <h3 class="service-title-header">High Converting Real Estate Websites</h3>
                     <h4>Websites That Actually Generate Listings & Buyers</h4>
 
-                    <p class="description">Stop losing leads to agents with better online presence. Get a website that works as hard as you do.</p>
+                    <p class="description" style="line-height: 1.7;">Stop losing leads to agents with better online presence. Get a website that works as hard as you do.</p>
                     <ul class="service-features-list">
                         <li class="feature-list-item">
                             <i class="fas fa-check feature-check-mark"></i>
@@ -651,10 +759,10 @@
                         </li>
                     </ul>
 
-                     <p style="margin-top: 1rem; font-style: italic; color: #f97316;"><strong>Perfect for:</strong> Agents who want to capture leads 24/7 and establish market authority</p>
+                     <p style="margin-top: 1rem; font-style: italic; color: #f97316; line-height: 1.7;"><strong>Perfect for:</strong> Agents who want to capture leads 24/7 and establish market authority</p>
                 </a>
 
-               <a href="services.html#chatbots" class="solution-service-card">
+    <a href="services.html#chatbots" class="solution-service-card">
     <div class="service-icon-container">
         <div class="icon-background-circle"></div>
         <i class="fas fa-robot primary-service-icon"></i>
@@ -663,7 +771,7 @@
     <h3 class="service-title-header">AI Chatbots & Lead Qualification</h3>
     <h4>Never Lose Another Lead to Slow Response Times</h4>
 
-    <p class="description">Respond to leads in under 60 seconds, even when you're showing properties or sleeping.</p>
+    <p class="description" style="line-height: 1.7;">Respond to leads in under 60 seconds, even when you're showing properties or sleeping.</p>
     <ul class="service-features-list">
         <li class="feature-list-item">
             <i class="fas fa-check feature-check-mark"></i>
@@ -691,7 +799,7 @@
         </li>
     </ul>
 
-    <p style="margin-top: 1rem; font-style: italic; color: #f97316;"><strong>Perfect for:</strong> Busy agents who want to respond to leads in under 60 seconds</p>
+    <p style="margin-top: 1rem; font-style: italic; color: #f97316; line-height: 1.7;"><strong>Perfect for:</strong> Busy agents who want to respond to leads in under 60 seconds</p>
 </a>
 
 <a href="services.html#automation" class="solution-service-card">
@@ -703,7 +811,7 @@
     <h3 class="service-title-header">Complete Workflow Automation</h3>
     <h4>Eliminate 15 Hours of Weekly Admin Work</h4>
 
-    <p class="description">Focus on high-value activities while our systems handle the repetitive tasks that drain your energy.</p>
+    <p class="description" style="line-height: 1.7;">Focus on high-value activities while our systems handle the repetitive tasks that drain your energy.</p>
     <ul class="service-features-list">
         <li class="feature-list-item">
             <i class="fas fa-check feature-check-mark"></i>
@@ -735,7 +843,7 @@
         </li>
     </ul>
 
-    <p style="margin-top: 1rem; font-style: italic; color: #f97316;"><strong>Perfect for:</strong> High-volume agents and team leaders who want to scale operations</p>
+    <p style="margin-top: 1rem; font-style: italic; color: #f97316; line-height: 1.7;"><strong>Perfect for:</strong> High-volume agents and team leaders who want to scale operations</p>
 </a>
 
 <a href="services.html#branding" class="solution-service-card">
@@ -747,7 +855,7 @@
     <h3 class="service-title-header">Professional Branding & Virtual Assistants</h3>
     <h4>Look Like the Market Leader You Are + Get Your Time Back</h4>
 
-    <p class="description">Premium branding that commands higher commissions plus dedicated support for all your daily tasks.</p>
+    <p class="description" style="line-height: 1.7;">Premium branding that commands higher commissions plus dedicated support for all your daily tasks.</p>
     <ul class="service-features-list">
         <li class="feature-list-item">
             <i class="fas fa-check feature-check-mark"></i>
@@ -775,7 +883,7 @@
         </li>
     </ul>
 
-    <p style="margin-top: 1rem; font-style: italic; color: #f97316;"><strong>Perfect for:</strong> Agents who want to command premium commissions and focus only on high-value activities</p>
+    <p style="margin-top: 1rem; font-style: italic; color: #f97316; line-height: 1.7;"><strong>Perfect for:</strong> Agents who want to command premium commissions and focus only on high-value activities</p>
 </a>
             </div>
     </section>
@@ -893,105 +1001,118 @@
 
 
     <!-- Enhanced Final CTA Section -->
-  <section class="ctas-section">
-        <div class="cosmic-bg">
-            <div class="particle"></div>
-            <div class="particle"></div>
+   <section class="cta-section">
+        <div class="cta-particles">
             <div class="particle"></div>
             <div class="particle"></div>
             <div class="particle"></div>
         </div>
         
         <div class="container">
-            <div class="cta-wrapper">
-                <div class="content-section">
-                    <div class="glitch-badge">
-                        <i class="fas fa-lightning-bolt"></i>
-                        <span>Limited Time Offer</span>
+            <div class="cta-grid">
+                <div class="cta-content">
+                    <div class="status-indicator">
+                        <span>Free Consultation Available</span>
                     </div>
                     
-                    <h1 class="hero-title">Unleash Your Business Potential</h1>
+                    <h2 class="cta-headline">
+                        Transform Your <span class="cta-highlight">Real Estate Business</span> in 30 Days
+                    </h2>
                     
-                    <p class="hero-subtitle">
-                        Transform your operations with elite virtual assistant services. Join 500+ successful entrepreneurs who've already revolutionized their business efficiency.
+                    <p class="cta-subtext">
+                        Stop losing deals to manual processes. Get a personalized automation strategy that shows you exactly how to scale without the overwhelm.
                     </p>
                     
-                    <div class="features-showcase">
-                        <div class="feature-pill">
-                            <div class="feature-icon">
-                                <i class="fas fa-gift"></i>
+                    <div class="value-proposition">
+                        <h3>What You'll Get in Your Free Audit:</h3>
+                        <div class="value-points">
+                            <div class="value-point">
+                                <i class="fas fa-search-dollar"></i>
+                                <span>Revenue leak analysis - identify where you're losing money</span>
                             </div>
-                            <span class="feature-text">Free 30-Day Trial</span>
-                        </div>
-                        
-                        <div class="feature-pill">
-                            <div class="feature-icon">
-                                <i class="fas fa-rocket"></i>
+                            <div class="value-point">
+                                <i class="fas fa-route"></i>
+                                <span>Custom automation roadmap tailored to your business</span>
                             </div>
-                            <span class="feature-text">Custom Solutions</span>
-                        </div>
-                        
-                        <div class="feature-pill">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
+                            <div class="value-point">
+                                <i class="fas fa-calculator"></i>
+                                <span>ROI projection for your first 90 days</span>
                             </div>
-                            <span class="feature-text">24/7 Premium Support</span>
-                        </div>
-                        
-                        <div class="feature-pill">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
+                            <div class="value-point">
+                                <i class="fas fa-clock"></i>
+                                <span>Time-saving opportunities worth $25k+ annually</span>
                             </div>
-                            <span class="feature-text">Guaranteed Results</span>
                         </div>
                     </div>
                     
-                    <div class="cta-buttons">
-                        <a href="https://forms.gle/VrYcahZMHVZGFfXw5" target="_blank" class="mega-cta">
-                            <span>Start Free Trial</span>
+                    <div class="cta-actions">
+                        <a href="https://afavirtuals.com" target="_blank" class="primary-cta">
+                            <span>Get Your Free Business Audit</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         
-                        <div class="contact-grid">
-                            <a href="https://forms.gle/VrYcahZMHVZGFfXw5" target="_blank" class="contact-option">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                            <a href="mailto:info@afavirtuals.com" class="contact-option">
-                                <i class="fas fa-envelope"></i>
-                                <span>Email Us</span>
-                            </a>
-                            <a href="tel:+250798971739" class="contact-option">
-                                <i class="fas fa-phone"></i>
-                                <span>Call Now</span>
-                            </a>
+                        <div class="secondary-contact">
+                            <p class="contact-text">Prefer to talk first?</p>
+                            <div class="contact-options">
+                                <a href="tel:+250798971739" class="contact-link">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+250 798 971 739</span>
+                                </a>
+                                <a href="mailto:info@afavirtuals.com" class="contact-link">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@afavirtuals.com</span>
+                                </a>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <div class="guarantee">
+                        <i class="fas fa-shield-check"></i>
+                        <span>100% Risk-Free • No Contracts • Cancel within 7 days</span>
                     </div>
                 </div>
                 
-                <div class="visual-section">
-                    <div class="hologram-container">
-                        <div class="hologram-grid"></div>
-                        
-                        <div class="data-points">
-                            <div class="data-card">
-                                <span class="data-value">500+</span>
-                                <span class="data-label">Success Stories</span>
+                <div class="cta-visual">
+                    <div class="results-preview">
+                        <div class="preview-header">
+                            <div class="header-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
-                            
-                            <div class="data-card">
-                                <span class="data-value">98%</span>
-                                <span class="data-label">Satisfaction Rate</span>
-                            </div>
-                            
-                            <div class="data-card">
-                                <span class="data-value">24/7</span>
-                                <span class="data-label">Elite Support</span>
-                            </div>
+                            <h4>Expected Results</h4>
                         </div>
                         
-                        <div class="central-orb">
-                            <i class="fas fa-crown"></i>
+                        <div class="results-metrics">
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-number">3.2x</span>
+                                    <span class="metric-label">More Deals Closed</span>
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-number">25hrs</span>
+                                    <span class="metric-label">Saved Per Week</span>
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-number">$180K</span>
+                                    <span class="metric-label">Additional Revenue</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1104,7 +1225,7 @@
                         
                         <div id="form-status"></div>
                         
-                        <button type="submit" class="btn btn-primary btn-large">
+                        <button type="submit" class="btn btn-primary ">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -1138,7 +1259,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Frequently Asked Questions</h2>
-                <p style="font-size: 1.6rem;">Everything you need to know about working with Afa-Virtuals</p>
+                <p>Everything you need to know about working with Afa-Virtuals</p>
             </div>
 
             <div class="faq-container">
@@ -1238,25 +1359,6 @@
                             <p>There isn't one. We grow when you grow. That’s why 98.9% of our clients stick with us beyond the free trial.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="faq-stats">
-                <div class="stat-item">
-                    <span class="stat-number">24–72hrs</span>
-                    <span class="stat-label">Typical System Launch</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">98.9%</span>
-                    <span class="stat-label">Client Retention Rate</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">+500</span>
-                    <span class="stat-label">Automations Delivered</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Support Availability</span>
                 </div>
             </div>
         </div>
@@ -1524,12 +1626,6 @@
 
     <script src="/asset/js/main.js"></script>
     <script src="/asset/js/volvok.js"></script>
-
-<script>
-
-</script>
-
-
 
 </body>
 </html>

@@ -59,12 +59,11 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
   font-family: var(--font-primary);
-  font-size: 1.6rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--dark-color);
   background-color: #fff;
@@ -95,7 +94,7 @@ h6 {
 }
 
 h1 {
-  font-size: 4.8rem;
+  font-size: 3.8rem;
 }
 
 h2 {
@@ -139,49 +138,9 @@ img {
   display: block;
 }
 
-.btn {
-  display: inline-block;
-  padding: 1.2rem 2.4rem;
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  text-align: center;
-  cursor: pointer;
-  transition: var(--transition);
-  border: none;
-  font-size: 1.6rem;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
 
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.5s ease;
-  z-index: -1;
-}
 
-.btn:hover::before {
-  width: 100%;
-}
 
-.btn-primary {
-  background-color: var(--primary-color);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(255, 119, 0, 0.3);
-}
-
-.btn-primary:hover {
-  background-color: #e66a00;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 119, 0, 0.4);
-}
 
 .btn-secondary {
   background-color: var(--secondary-color);
@@ -236,7 +195,7 @@ img {
 .section-header h2 {
   position: relative;
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
   color: var(--dark-color);
 }
 
@@ -254,7 +213,7 @@ img {
 
 .section-header p {
   color: var(--gray-color);
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   max-width: 60rem;
   margin: 0 auto;
 }
@@ -424,7 +383,7 @@ header {
 }
 
 .nav-menu li {
-  margin-left: 3rem;
+  margin-left: 0.8rem;
 }
 
 .nav-link {
@@ -579,11 +538,11 @@ header {
   }
 
   h1 {
-    font-size: 4.2rem;
+    font-size: 3.2rem;
   }
 
   h2 {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
   }
 
   /* Blog post layout adjustments */
@@ -745,17 +704,6 @@ header {
     padding: 8rem 0;
   }
 
-  h1 {
-    font-size: 3.8rem;
-  }
-
-  h2 {
-    font-size: 2.8rem;
-  }
-
-  /* Navigation adjustments */
-
-
   /* Grid adjustments */
   .unique-grid,
   .blog-grid,
@@ -852,7 +800,7 @@ header {
   }
   
   .post-section h2 {
-    font-size: 2.4rem;
+    font-size: 1.4rem;
   }
   
   .comment {
@@ -931,13 +879,7 @@ header {
     padding: 7rem 0;
   }
 
-  h1 {
-    font-size: 3.4rem;
-  }
 
-  h2 {
-    font-size: 2.6rem;
-  }
 
   /* Navigation adjustments */
   .menu-toggle {

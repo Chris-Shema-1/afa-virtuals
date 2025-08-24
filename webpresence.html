@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afa-Virtuals | Real Estate Website Design & AI Automation Solutions</title>
+    <meta name="description" content="Professional real estate websites with IDX integration, AI chatbots, and CRM automation. Transform your online presence into a 24/7 lead generation machine.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #f97316;
+            --primary-dark: #ea580c;
+            --secondary: #1f2937;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --gradient: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 { margin-bottom: 8px; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-6 { margin-bottom: 24px; }
+        .mb-8 { margin-bottom: 32px; }
+        .mb-12 { margin-bottom: 48px; }
+        .mb-16 { margin-bottom: 64px; }
+
+        .text-sm { font-size: 14px; }
+        .text-base { font-size: 16px; }
+        .text-lg { font-size: 18px; }
+        .text-xl { font-size: 20px; }
+        .text-2xl { font-size: 24px; }
+        .text-3xl { font-size: 30px; }
+        .text-4xl { font-size: 36px; }
+        .text-5xl { font-size: 48px; }
+
+        @media (min-width: 768px) {
+            .md\\:text-6xl { font-size: 60px; }
+            .md\\:text-5xl { font-size: 48px; }
+            .md\\:text-4xl { font-size: 36px; }
+            .md\\:text-3xl { font-size: 30px; }
+            .md\\:text-2xl { font-size: 24px; }
+            .md\\:text-xl { font-size: 20px; }
+        }
+
+        .font-light { font-weight: 300; }
+        .font-normal { font-weight: 400; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-extrabold { font-weight: 800; }
+
+        .text-primary { color: var(--primary); }
+        .text-gray-500 { color: var(--gray-500); }
+        .text-gray-600 { color: var(--gray-600); }
+        .text-gray-700 { color: var(--gray-700); }
+        .text-gray-800 { color: var(--gray-800); }
+        .text-white { color: var(--white); }
+
+        .bg-white { background-color: var(--white); }
+        .bg-gray-50 { background-color: var(--gray-50); }
+        .bg-gray-900 { background-color: var(--gray-900); }
+
+      
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 25% 25%, var(--primary) 0%, transparent 50%), 
+                              radial-gradient(circle at 75% 75%, var(--accent) 0%, transparent 50%);
+            opacity: 0.03;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 64px;
+            }
+        }
+
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient);
+            color: white;
+            padding: 16px 32px;
+            border-radius: var(--border-radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 48px;
+            }
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(3, 1fr));
+            gap: 32px;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        @media (min-width: 768px) {
+            .md\\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .md\\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-100);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient);
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .card-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Solution Cards */
+        .solution-card {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-100);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .solution-header {
+            background: var(--gray-50);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .solution-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+            color: white;
+        }
+
+        .solution-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .solution-subtitle {
+            color: var(--gray-600);
+            font-size: 18px;
+        }
+
+        .solution-content {
+            padding: 32px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--gray-700);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 48px;
+            margin-top: 64px;
+        }
+
+        @media (min-width: 768px) {
+            .process-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 auto 24px;
+        }
+
+        .process-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--gray-900);
+        }
+
+        .process-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        @media (min-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-xl);
+            padding: 32px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-100);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+
+        .faq-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .faq-icon {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-content {
+            padding: 0 24px 24px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Case Study Section */
+        .case-study {
+            background: var(--gray-900);
+            color: white;
+        }
+
+        .case-study .section-badge {
+            background: rgba(249, 115, 22, 0.2);
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+
+        .case-study .section-title {
+            color: white;
+        }
+
+        .case-study .section-subtitle {
+            color: var(--gray-300);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: var(--border-radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray-700);
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 100px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .card {
+                padding: 24px;
+            }
+            
+            .solution-header,
+            .solution-content {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="hero-badge">
+                    🚀 Trusted by 500+ Real Estate Professionals
+                </div>
+                <h1>
+                    <span class="gradient-text">Smarter Real Estate.</span><br>
+                    More Leads. Less Work.
+                </h1>
+                <p>
+                    Transform your real estate business with AI-powered automation, custom websites, 
+                    and intelligent systems that capture and convert leads 24/7.
+                </p>
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-calendar-alt"></i>
+                    Book Free Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section bg-gray-50">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Why Choose Us</div>
+                <h2 class="section-title">Stop Losing Leads to Competitors</h2>
+                <p class="section-subtitle">
+                    Most real estate websites are digital business cards. Ours are lead generation machines 
+                    that work 24/7, automatically nurturing prospects while you focus on closing deals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="card-title">Capture More Leads</h3>
+                    <p class="card-description">
+                        Convert 3x more website visitors with strategic lead magnets, IDX integration, 
+                        and AI chatbots that engage prospects instantly, even while you sleep.
+                    </p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="card-title">Save Time with Automation</h3>
+                    <p class="card-description">
+                        Eliminate manual follow-ups with smart automation that nurtures leads, books appointments, 
+                        and sends personalized property recommendations based on buyer behavior.
+                    </p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Make Data-Driven Decisions</h3>
+                    <p class="card-description">
+                        Track exactly which marketing efforts drive results with detailed analytics on lead sources, 
+                        property engagement, and conversion rates to optimize your strategy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="section" id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Solutions</div>
+                <h2 class="section-title">Everything You Need to Dominate Your Market</h2>
+                <p class="section-subtitle">
+                    Complete digital ecosystems that transform your online presence into a powerful 
+                    lead generation and client acquisition system.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Custom Websites -->
+                <div class="solution-card fade-in">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="solution-title">Custom Real Estate Websites</h3>
+                        <p class="solution-subtitle">Professional, conversion-optimized websites that turn visitors into leads</p>
+                    </div>
+                    <div class="solution-content">
+                        <ul class="feature-list">
+                            <li>Full IDX/MLS Integration with Advanced Search</li>
+                            <li>Mobile-First Design & Lightning-Fast Loading</li>
+                            <li>Built-in Mortgage Calculator & Affordability Tools</li>
+                            <li>Advanced Property Filters & Saved Searches</li>
+                            <li>Strategic Lead Capture & Appointment Scheduling</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- AI Chatbots -->
+                <div class="solution-card fade-in">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="solution-title">AI-Powered Chatbots</h3>
+                        <p class="solution-subtitle">24/7 lead engagement that never sleeps or takes a vacation</p>
+                    </div>
+                    <div class="solution-content">
+                        <ul class="feature-list">
+                            <li>24/7 Instant Lead Engagement & Qualification</li>
+                            <li>Automated Appointment Booking & Calendar Sync</li>
+                            <li>Personalized Property Recommendations</li>
+                            <li>Seamless CRM Integration & Lead Handoff</li>
+                            <li>Multi-language Support for Diverse Markets</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- CRM Automation -->
+                <div class="solution-card fade-in">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="solution-title">CRM & Email Automation</h3>
+                        <p class="solution-subtitle">Intelligent nurturing that converts prospects into clients</p>
+                    </div>
+                    <div class="solution-content">
+                        <ul class="feature-list">
+                            <li>Automatic Lead Sync from All Sources</li>
+                            <li>Visual Pipeline Management & Deal Tracking</li>
+                            <li>Behavior-Triggered Email Campaigns</li>
+                            <li>Smart Lead Segmentation & Scoring</li>
+                            <li>Market Reports & Listing Alerts Automation</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="solution-card fade-in">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-analytics"></i>
+                        </div>
+                        <h3 class="solution-title">Analytics & Reporting</h3>
+                        <p class="solution-subtitle">Data-driven insights that optimize your business growth</p>
+                    </div>
+                    <div class="solution-content">
+                        <ul class="feature-list">
+                            <li>Real-Time Website & Listing Performance</li>
+                            <li>Lead Source Attribution & ROI Tracking</li>
+                            <li>Chatbot Engagement & Conversion Analytics</li>
+                            <li>Automated Weekly Performance Reports</li>
+                            <li>Market Trend Analysis & Competitor Insights</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section bg-gray-50" id="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Our Process</div>
+                <h2 class="section-title">From Setup to Success in 4 Steps</h2>
+                <p class="section-subtitle">
+                    Streamlined process to get you up and running quickly with minimal disruption 
+                    to your current business operations.
+                </p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="process-number">1</div>
+                    <h3 class="process-title">Discovery & Strategy</h3>
+                    <p class="process-description">
+                        We analyze your business goals, target market, and current challenges to design 
+                        a customized solution that fits your unique needs and budget.
+                    </p>
+                </div>
+
+                <div class="process-step fade-in">
+                    <div class="process-number">2</div>
+                    <h3 class="process-title">Design & Development</h3>
+                    <p class="process-description">
+                        Our team builds your custom website, integrates MLS data, configures automation 
+                        workflows, and sets up AI chatbots with your business requirements.
+                    </p>
+                </div>
+
+                <div class="process-step fade-in">
+                    <div class="process-number">3</div>
+                    <h3 class="process-title">Launch & Training</h3>
+                    <p class="process-description">
+                        We launch your new system and provide comprehensive training for you and your team. 
+                        You'll master every feature to maximize results from day one.
+                    </p>
+                </div>
+
+                <div class="process-step fade-in">
+                    <div class="process-number">4</div>
+                    <h3 class="process-title">Optimize & Scale</h3>
+                    <p class="process-description">
+                        We monitor performance, provide ongoing support, and continuously optimize 
+                        based on real data to ensure maximum ROI and business growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="section case-study" id="case-study">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Success Story</div>
+                <h2 class="section-title">How Sarah Martinez Tripled Her Lead Generation</h2>
+                <p class="section-subtitle">
+                    Florida realtor transformed her struggling website into a 24/7 lead generation machine 
+                    that books qualified appointments automatically.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <span class="stat-number">340%</span>
+                    <p class="stat-label">Increase in Website Leads</p>
+                </div>
+
+                <div class="stat-card fade-in">
+                    <span class="stat-number">28</span>
+                    <p class="stat-label">Hours Saved Per Week</p>
+                </div>
+
+                <div class="stat-card fade-in">
+                    <span class="stat-number">89%</span>
+                    <p class="stat-label">Lead-to-Appointment Rate</p>
+                </div>
+
+                <div class="stat-card fade-in">
+                    <span class="stat-number">$2.1M</span>
+                    <p class="stat-label">Additional Revenue (6 Months)</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 48px;">
+                <a href="#contact" class="cta-button-white">
+                    <i class="fas fa-chart-line"></i>
+                    Get Similar Results
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">FAQ</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">
+                    Get answers to common questions about our real estate technology solutions.
+                </p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="faq-title">Do I own my website and all the content?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            Absolutely! You own your website, domain, content, and all lead data. We provide 
+                            hosting, maintenance, and optimization services. You can transfer your website 
+                            anywhere at any time with full ownership rights.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="faq-title">Can you integrate with my existing CRM system?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            Yes! We integrate with all major real estate CRMs including Top Producer, Wise Agent, 
+                            Chime, Follow Up Boss, KvCore, and many others. We also work with existing email 
+                            marketing platforms and lead management tools.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="faq-title">What if I already have a website?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            We can either redesign your existing site with our advanced features, or integrate 
+                            our tools (chatbots, automation, analytics) into your current website. We'll assess 
+                            your current setup and recommend the best approach for maximum results.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="faq-title">How secure is my client data?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            Security is our top priority. We use enterprise-grade SSL encryption, regular security 
+                            audits, automatic backups, and comply with all real estate data protection standards. 
+                            Your client data is protected with bank-level security protocols.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="faq-title">How long does it take to see results?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            Most clients see increased lead generation within 30 days. The biggest impact comes 
+                            after 60-90 days when automation systems and SEO optimization fully take effect. 
+                            We provide detailed analytics to track progress every step of the way.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="faq-title">What kind of ongoing support do you provide?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            Comprehensive ongoing support including technical maintenance, content updates, 
+                            performance optimization, monthly analytics reports, and unlimited support via phone, 
+                            email, and chat. Think of us as your dedicated real estate IT department.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section final-cta" id="contact">
+        <div class="container text-center">
+            <h2 class="section-title text-white mb-4">Ready to Close More Deals with Less Work?</h2>
+            <p class="section-subtitle text-white mb-8" style="color: rgba(255,255,255,0.9);">
+                Join 500+ successful real estate professionals who've transformed their businesses 
+                with our proven technology solutions.
+            </p>
+            <a href="tel:+1-555-238-8324" class="cta-button-white mb-6">
+                <i class="fas fa-phone"></i>
+                Book Your Free Consultation
+            </a>
+            <div class="text-white" style="opacity: 0.9;">
+                <p class="mb-2">📞 Call (555) 238-8324</p>
+                <p>📧 hello@afa-virtuals.com</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 1px 3px 0 rgb(0 0 0 / 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentNode;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '100%';
+                navMenu.style.left = '0';
+                navMenu.style.right = '0';
+                navMenu.style.background = 'white';
+                navMenu.style.padding = '20px';
+                navMenu.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
+            }
+        });
+
+        // Button hover effects
+        document.querySelectorAll('.cta-button, .cta-button-white').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Form tracking (placeholder for analytics)
+        document.querySelectorAll('.cta-button, .cta-button-white').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('CTA clicked:', this.textContent.trim());
+                // Add your analytics tracking code here
+            });
+        });
+
+        // Initialize animations on load
+        window.addEventListener('load', function() {
+            // Add any initialization code here
+            console.log('Afa-Virtuals website loaded successfully');
+        });
+    </script>
+</body>
+</html>
