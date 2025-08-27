@@ -1,5 +1,5 @@
 // =============================================================================
-// OPTIMIZED WEBSITE JAVASCRIPT - PERFORMANCE ENHANCED
+// OPTIMIZED WEBSITE JAVASCRIPT - PERFORMANCE ENHANCED WITH FIXED MOBILE NAV
 // Target: Sub 1-second loading while preserving all functionality
 // =============================================================================
 
@@ -21,6 +21,20 @@ const Utils = {
         };
     },
 
+    // Enhanced smooth scroll with header offset
+    smoothScrollTo(target) {
+        const element = typeof target === 'string' ? document.querySelector(target) : target;
+        if (element) {
+            const headerHeight = document.getElementById('header')?.offsetHeight || 80;
+            const elementPosition = element.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        }
+    },
+
     // Cached viewport check
     isInViewport(element) {
         const rect = element.getBoundingClientRect();
@@ -30,16 +44,6 @@ const Utils = {
             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
-    },
-
-    smoothScrollTo(target) {
-        const element = document.querySelector(target);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
     },
 
     formatNumber(num) {
@@ -193,7 +197,7 @@ class ContactFormHandler {
 }
 
 // =============================================================================
-// MOBILE MENU HANDLER - Preserved & Optimized
+// MOBILE MENU HANDLER - FIXED VERSION
 // =============================================================================
 
 class MobileMenuHandler {
@@ -218,19 +222,61 @@ class MobileMenuHandler {
     }
 
     setupEventListeners() {
-        this.toggleButton.addEventListener('click', this.toggle.bind(this));
+        // Mobile menu toggle
+        this.toggleButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.toggle();
+        });
         
+        // Services dropdown for mobile
         if (this.servicesDropdown) {
-            this.servicesDropdown.addEventListener('click', (e) => {
-                if (window.innerWidth <= 991) {
-                    e.preventDefault();
-                    this.servicesDropdown.classList.toggle('mobile-dropdown-active');
-                }
-            });
+            const servicesLink = this.servicesDropdown.querySelector('.nav-link');
+            if (servicesLink) {
+                servicesLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault();
+                        this.servicesDropdown.classList.toggle('mobile-dropdown-active');
+                    }
+                });
+            }
         }
         
-        const navLinks = this.navMenuWrapper.querySelectorAll('.nav-link, .mobile-cta, .dropdown-link');
+        // Handle navigation link clicks (excluding services dropdown)
+        const navLinks = this.navMenuWrapper.querySelectorAll('.nav-link:not(#services-dropdown .nav-link)');
         navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 991) {
+                    const href = link.getAttribute('href');
+                    
+                    // If it's an anchor link (starts with #), handle smooth scrolling
+                    if (href && href.startsWith('#') && href !== '#') {
+                        e.preventDefault();
+                        this.close();
+                        
+                        // Wait for menu to close before scrolling
+                        setTimeout(() => {
+                            const targetElement = document.querySelector(href);
+                            if (targetElement) {
+                                Utils.smoothScrollTo(targetElement);
+                            }
+                        }, 400); // Match the CSS transition duration
+                    } else {
+                        // For regular page navigation, just close the menu
+                        this.close();
+                    }
+                    
+                    // Close services dropdown if open
+                    if (this.servicesDropdown) {
+                        this.servicesDropdown.classList.remove('mobile-dropdown-active');
+                    }
+                }
+            });
+        });
+
+        // Handle dropdown links
+        const dropdownLinks = this.navMenuWrapper.querySelectorAll('.dropdown-link');
+        dropdownLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 991) {
                     this.close();
@@ -240,7 +286,31 @@ class MobileMenuHandler {
                 }
             });
         });
+
+        // Handle mobile CTA button
+        const mobileCTA = this.navMenuWrapper.querySelector('.mobile-cta');
+        if (mobileCTA) {
+            mobileCTA.addEventListener('click', (e) => {
+                if (window.innerWidth <= 991) {
+                    const href = mobileCTA.getAttribute('href');
+                    if (href && href.startsWith('#') && href !== '#') {
+                        e.preventDefault();
+                        this.close();
+                        
+                        setTimeout(() => {
+                            const targetElement = document.querySelector(href);
+                            if (targetElement) {
+                                Utils.smoothScrollTo(targetElement);
+                            }
+                        }, 400);
+                    } else {
+                        this.close();
+                    }
+                }
+            });
+        }
         
+        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (this.isOpen && 
                 !this.toggleButton.contains(e.target) && 
@@ -249,6 +319,7 @@ class MobileMenuHandler {
             }
         });
         
+        // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && this.isOpen) {
                 this.close();
@@ -256,8 +327,9 @@ class MobileMenuHandler {
             }
         });
 
+        // Close menu when window is resized to desktop
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 768 && this.isOpen) {
+            if (window.innerWidth > 991 && this.isOpen) {
                 this.close();
             }
         });
@@ -293,10 +365,7 @@ class MobileMenuHandler {
         }, { passive: true });
     }
 
-    toggle(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
+    toggle() {
         if (this.isOpen) {
             this.close();
         } else {
@@ -313,6 +382,7 @@ class MobileMenuHandler {
         this.navMenuWrapper.setAttribute('aria-hidden', 'false');
         this.navMenuWrapper.style.visibility = 'visible';
         
+        // Focus management
         setTimeout(() => {
             const firstNavLink = this.navMenuWrapper.querySelector('.nav-link');
             if (firstNavLink) {
@@ -326,6 +396,7 @@ class MobileMenuHandler {
         this.toggleButton.classList.remove('active');
         this.navMenuWrapper.classList.remove('active');
         
+        // Close services dropdown
         if (this.servicesDropdown) {
             this.servicesDropdown.classList.remove('mobile-dropdown-active');
         }
@@ -334,6 +405,7 @@ class MobileMenuHandler {
         this.toggleButton.setAttribute('aria-expanded', 'false');
         this.navMenuWrapper.setAttribute('aria-hidden', 'true');
         
+        // Hide after animation completes
         setTimeout(() => {
             if (!this.isOpen) {
                 this.navMenuWrapper.style.visibility = 'hidden';
@@ -341,6 +413,7 @@ class MobileMenuHandler {
         }, 400);
     }
 
+    // Public methods for external use
     isMenuOpen() { return this.isOpen; }
     forceClose() { if (this.isOpen) this.close(); }
     isDropdownActive() { return this.servicesDropdown ? this.servicesDropdown.classList.contains('mobile-dropdown-active') : false; }
@@ -628,19 +701,22 @@ class OptimizedScrollEffectsSystem {
     }
 
     setupSmoothScrolling() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                const href = anchor.getAttribute('href');
-                if (!href || href === '#' || href.length <= 1) {
-                    return;
-                }
-                
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    Utils.smoothScrollTo(href);
-                }
-            });
+        // Handle all anchor links globally
+        document.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (!anchor) return;
+            
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#' || href.length <= 1) return;
+            
+            // Skip if this is handled by mobile menu (will be handled there)
+            if (window.innerWidth <= 991 && anchor.closest('#nav-menu-wrapper')) return;
+            
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                Utils.smoothScrollTo(target);
+            }
         });
     }
 
