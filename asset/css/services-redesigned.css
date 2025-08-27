@@ -2293,60 +2293,7 @@ h6 {
             animation: fadeInUp 0.8s ease-out 0.7s both;
         }
 
-        .stat-item {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: var(--border-radius-large);
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid rgba(249, 115, 22, 0.1);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: var(--transition-smooth);
-            transform-origin: left;
-        }
-
-        .stat-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--box-shadow-hover);
-            border-color: var(--primary-color);
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: var(--gray-color);
-            font-weight: 500;
-            font-family: var(--font-secondary);
-        }
-
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
