@@ -193,12 +193,37 @@
 </head>
 <body>
     <!-- Preloader  -->
-    <!-- <div id="preloader">
-        <div class="loader">
-            <div class="loader-inner"></div>
+      <div class="preloader" id="preloader">
+        <div class="geometric-bg">
+            <div class="geometric-shape shape-1"></div>
+            <div class="geometric-shape shape-2"></div>
+            <div class="geometric-shape shape-3"></div>
         </div>
-        <p class="preloader-slogan">Your task, our priority</p>
-    </div>  -->
+        
+        <div class="particles" id="particles"></div>
+        
+        <div class="pre-logo-container">
+            <div class="pre-logo">
+                <img src="/asset/img/logo/icon.png" alt="Afa-Virtuals company logo" class="preloader-logo">
+            </div>
+        </div>
+        
+        <div class="slogan-container">
+            <div class="slogan">
+                <span class="highlight">Your Task</span>, Our Priority
+            </div>
+            <div class="subtitle">
+                Delivering excellence through smart automation.
+            </div>
+        </div>
+        
+        <div class="loading-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="loading-text">Loading your experience...</div>
+        </div>
+    </div>
 
     <!-- Header -->
     <header id="header">
@@ -1302,13 +1327,13 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Ready to transform your business? Let's start the conversation and build something amazing together</p>
+              <h2>Start Your Transformation</h2>
+                <p>Every partnership begins with a conversation. Share your challenges we’ll craft a tailored solution designed to elevate your business to the next level.</p>
             </div>
             
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
+                    <h3>Direct Access</h3>
                     
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -1338,7 +1363,7 @@
                         <i class="fas fa-clock"></i>
                         <div>
                             <h4>Business Hours</h4>
-                            <span>24/7 Support Available</span>
+                            <span>8 AM - 9 PM Support Available</span>
                         </div>
                     </div>
 
@@ -1362,53 +1387,102 @@
                 </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contact-form" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name <span style="color: red;">*</span></label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                        </div>
+         <div class="contact-form">
+        <h3>Request Your Exclusive Consultation</h3>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Your Full Name <span style="color: red;">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Business Email <span style="color: red;">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Enter your business email">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Direct Contact Number <span style="color: red;">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your contact number">
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Choose Your Engagement <span style="color: red;">*</span></label>
+                <div class="custom-select">
+                    <div class="select-selected">
+                        <span class="placeholder-text">Select Your Services</span>
+                        <i class="fas fa-chevron-down select-arrow"></i>
+                    </div>
+                    <div class="select-items select-hide">
+                        <div class="option-group">Strategic Growth</div>
+                        <div data-value="Business Audit & Setup">Business Audit & Setup</div>
+                        <div data-value="Executive Partnership Support">Executive Partnership Support</div>
                         
-                        <div class="form-group">
-                            <label for="email">Email Address <span style="color: red;">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                        </div>
+                        <div class="option-group">AI-Powered Agents</div>
+                        <div data-value="Customer Support AI Agent">Customer Support AI Agent</div>
+                        <div data-value="Sales & Lead Generation AI Agent">Sales & Lead Generation AI Agent</div>
+                        <div data-value="Administrative AI Agent">Administrative AI Agent</div>
+                        <div data-value="Project Workflow AI Agent">Project Workflow AI Agent</div>
+                        <div data-value="Custom AI Agent">Custom AI Agent</div>
                         
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                        </div>
+                        <div class="option-group">Automation</div>
+                        <div data-value="Workflow Automation Systems">Workflow Automation Systems</div>
                         
-                        <div class="form-group">
-                            <label for="service">Service Interested In <span style="color: red;">*</span></label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="Administrative Support">Administrative Support</option>
-                                <option value="Tech Support & Solutions">Tech Support & Solutions</option>
-                                <option value="Web Design">Web Design</option>
-                                <option value="Social Media Management">Social Media Management</option>
-                                <option value="Graphic Design">Graphic Design</option>
-                                <option value="Custom Package">Custom Package</option>
-                            </select>
-                        </div>
+                        <div class="option-group">Creative Excellence</div>
+                        <div data-value="Web Design & Digital Experiences">Web Design & Digital Experiences</div>
+                        <div data-value="Brand Identity & Visual Strategy">Brand Identity & Visual Strategy</div>
                         
-                        <div class="form-group">
-                            <label for="message">Message <span style="color: red;">*</span></label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or requirements..."></textarea>
-                        </div>
+                        <div class="option-group">Operational Support</div>
+                        <div data-value="Administrative Management">Administrative Management</div>
+                        <div data-value="Technical Support & Optimization">Technical Support & Optimization</div>
                         
-                        <div id="form-status"></div>
-                        
-                        <button type="submit" class="btn btn-primary ">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                    <div id="form-status"></div>
-                    <div id="success-message">Thank you! Your message was submitted.</div>
-
+                        <div class="option-group">Tailored Engagements</div>
+                        <div data-value="Custom Premium Package">Custom Premium Package</div>
+                    </div>
+                    <select id="service" name="service" required multiple>
+                        <optgroup label="Strategic Growth">
+                            <option value="Business Audit & Setup">Business Audit & Setup</option>
+                            <option value="Executive Partnership Support">Executive Partnership Support</option>
+                        </optgroup>
+                        <optgroup label="AI-Powered Agents">
+                            <option value="Customer Support AI Agent">Customer Support AI Agent</option>
+                            <option value="Sales & Lead Generation AI Agent">Sales & Lead Generation AI Agent</option>
+                            <option value="Administrative AI Agent">Administrative AI Agent</option>
+                            <option value="Project Workflow AI Agent">Project Workflow AI Agent</option>
+                            <option value="Custom AI Agent">Custom AI Agent</option>
+                        </optgroup>
+                        <optgroup label="Automation">
+                            <option value="Workflow Automation Systems">Workflow Automation Systems</option>
+                        </optgroup>
+                        <optgroup label="Creative Excellence">
+                            <option value="Web Design & Digital Experiences">Web Design & Digital Experiences</option>
+                            <option value="Brand Identity & Visual Strategy">Brand Identity & Visual Strategy</option>
+                        </optgroup>
+                        <optgroup label="Operational Support">
+                            <option value="Administrative Management">Administrative Management</option>
+                            <option value="Technical Support & Optimization">Technical Support & Optimization</option>
+                        </optgroup>
+                        <optgroup label="Tailored Engagements">
+                            <option value="Custom Premium Package">Custom Premium Package</option>
+                        </optgroup>
+                    </select>
                 </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">What's Your Biggest Pain Point? <span style="color: red;">*</span></label>
+                <textarea id="message" name="message" rows="5" required placeholder="Describe the challenges or bottlenecks you want us to solve..."></textarea>
+            </div>
+            
+            <div id="form-status"></div>
+            
+            <button type="submit" class="btn btn-primary">
+                <span>Initiate Partnership</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+        <div id="success-message">Thank you! Your request has been received — our team will connect with you shortly to begin your journey.</div>
+    </div>
+
             </div>
         </div>
     </section>

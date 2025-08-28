@@ -97,104 +97,338 @@ const Utils = {
     }
 };
 
+// ================================================================================
+// PRE LOADER CONTENT 
+// ================================================================================
+
+  class PreloaderManager {
+            constructor() {
+                this.preloader = document.getElementById('preloader');
+                this.mainContent = document.getElementById('mainContent');
+                this.loadingDuration = 3500; // 3.5 seconds
+                
+                this.init();
+            }
+
+            init() {
+                this.createParticles();
+                this.startLoading();
+            }
+
+            createParticles() {
+                const particlesContainer = document.getElementById('particles');
+                const particleCount = 15;
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 8 + 's';
+                    particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            startLoading() {
+                // Auto-hide preloader after loading duration
+                setTimeout(() => {
+                    this.hidePreloader();
+                }, this.loadingDuration);
+            }
+
+            hidePreloader() {
+                this.preloader.classList.add('fade-out');
+                
+                setTimeout(() => {
+                    this.preloader.style.display = 'none';
+                    this.mainContent.classList.add('show');
+                    document.body.style.overflow = 'auto';
+                }, 800);
+            }
+
+            showPreloader() {
+                this.preloader.style.display = 'flex';
+                this.preloader.classList.remove('fade-out');
+                this.mainContent.classList.remove('show');
+                document.body.style.overflow = 'hidden';
+                
+                // Restart animations
+                const progressFill = document.querySelector('.progress-fill');
+                progressFill.style.animation = 'none';
+                progressFill.offsetHeight; // Trigger reflow
+                progressFill.style.animation = 'progressFill 3s ease-in-out';
+                
+                this.startLoading();
+            }
+        }
+
+      
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            window.preloaderManager = new PreloaderManager();
+        });
+
+        // Simulate real loading scenarios
+        window.addEventListener('load', function() {
+            // Additional loading simulation for resources
+            console.log('All resources loaded');
+        });
+
 // =============================================================================
 // CONTACT FORM HANDLER - Preserved & Optimized
 // =============================================================================
 
-class ContactFormHandler {
-    constructor() {
-        this.form = document.getElementById("contact-form");
-        this.scriptURL = "https://script.google.com/macros/s/AKfycbwnNVV2XKcaLur09pts3PLa-DWxg7LqsQGvCRz50ueWw6upy7ubm6ynd0VdmyPsj6pt/exec";
-        this.statusDiv = document.getElementById("form-status");
-        this.successMessage = document.getElementById("success-message");
-        
-        if (this.form) {
-            this.init();
-        }
-    }
+// Removed duplicate Utils class declaration.
+// If you want to show notifications in the form-status div, add a method to the Utils object above, or use Utils.showNotification as already defined.
 
-    init() {
-        this.form.addEventListener("submit", this.handleSubmit.bind(this));
-    }
-
-    async handleSubmit(e) {
-        e.preventDefault();
-        
-        const requiredFields = this.form.querySelectorAll('[required]');
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.style.borderColor = '#e53e3e';
-                field.setAttribute('aria-invalid', 'true');
-            } else {
-                field.style.borderColor = '';
-                field.removeAttribute('aria-invalid');
+        // Contact Form Handler Class
+        class ContactFormHandler {
+            constructor() {
+                this.form = document.getElementById("contact-form");
+                this.scriptURL = "https://script.google.com/macros/s/AKfycbwnNVV2XKcaLur09pts3PLa-DWxg7LqsQGvCRz50ueWw6upy7ubm6ynd0VdmyPsj6pt/exec";
+                this.statusDiv = document.getElementById("form-status");
+                this.successMessage = document.getElementById("success-message");
+                
+                if (this.form) {
+                    this.init();
+                }
             }
+
+            init() {
+                this.form.addEventListener("submit", this.handleSubmit.bind(this));
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                const requiredFields = this.form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                // Validate multi-select dropdown
+                if (selectedValues.size === 0) {
+                    isValid = false;
+                    Utils.showNotification('Please select at least one service.', 'error');
+                    return;
+                }
+                
+                requiredFields.forEach(field => {
+                    if (field.type !== 'hidden' && !field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = '#e53e3e';
+                        field.setAttribute('aria-invalid', 'true');
+                    } else {
+                        field.style.borderColor = '';
+                        field.removeAttribute('aria-invalid');
+                    }
+                });
+                
+                if (!isValid) {
+                    Utils.showNotification('Please fill in all required fields.', 'error');
+                    return;
+                }
+
+                this.showStatus("Sending...", "success");
+                
+                try {
+                    const formData = new FormData(this.form);
+                    
+                    // Add selected services to form data
+                    const selectedServices = Array.from(selectedValues);
+                    formData.set('service', selectedServices.join(', '));
+                    
+                    const response = await fetch(this.scriptURL, {
+                        method: "POST",
+                        body: formData,
+                    });
+                    
+                    const result = await response.text();
+                    console.log("Form submission success:", result);
+                    
+                    this.form.reset();
+                    this.resetMultiSelect();
+                    this.showSuccessMessage();
+                    this.trackFormSubmission();
+                    
+                } catch (error) {
+                    console.error("Form submission error:", error);
+                    this.showStatus("Failed to send message. Please try again.", "error");
+                }
+            }
+
+            showStatus(message, type) {
+                if (this.statusDiv) {
+                    this.statusDiv.innerText = message;
+                    this.statusDiv.className = `alert-${type}`;
+                    this.statusDiv.style.display = "block";
+                }
+            }
+
+            showSuccessMessage() {
+                if (this.successMessage) {
+                    this.successMessage.className = "alert-success";
+                    this.successMessage.style.display = "block";
+                    this.successMessage.innerText = "Thank you! Your message was submitted.";
+                }
+                
+                if (this.statusDiv) {
+                    this.statusDiv.style.display = "none";
+                }
+
+                setTimeout(() => {
+                    if (this.successMessage) {
+                        this.successMessage.style.display = "none";
+                    }
+                }, 5000);
+            }
+
+            resetMultiSelect() {
+                selectedValues.clear();
+                const options = document.querySelectorAll('.select-items div[data-value]');
+                options.forEach(opt => opt.classList.remove('selected-option'));
+                updateSelectedDisplay();
+            }
+
+            trackFormSubmission() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        form_name: 'contact_form'
+                    });
+                }
+            }
+        }
+
+        // Custom multi-select dropdown functionality
+        let selectedValues = new Set();
+        
+        function initCustomSelect() {
+            const customSelects = document.querySelectorAll('.custom-select');
+            
+            customSelects.forEach(function(customSelect) {
+                const selectSelected = customSelect.querySelector('.select-selected');
+                const selectItems = customSelect.querySelector('.select-items');
+                const originalSelect = customSelect.querySelector('select');
+                const options = selectItems.querySelectorAll('div[data-value]');
+                
+                // Initialize display
+                updateSelectedDisplay();
+                
+                // Toggle dropdown
+                selectSelected.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeAllSelect(customSelect);
+                    selectItems.classList.toggle('select-hide');
+                    selectSelected.classList.toggle('select-arrow-active');
+                });
+                
+                // Handle option selection
+                options.forEach(function(option) {
+                    option.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const value = this.getAttribute('data-value');
+                        
+                        // Toggle selection
+                        if (selectedValues.has(value)) {
+                            selectedValues.delete(value);
+                            this.classList.remove('selected-option');
+                        } else {
+                            selectedValues.add(value);
+                            this.classList.add('selected-option');
+                        }
+                        
+                        // Update display and hidden select
+                        updateSelectedDisplay();
+                        updateHiddenSelect();
+                        
+                        // Don't close dropdown for multi-select
+                        // Keep dropdown open for additional selections
+                    });
+                });
+            });
+        }
+        
+        function updateSelectedDisplay() {
+            const selectSelected = document.querySelector('.select-selected');
+            const selectedCount = selectedValues.size;
+            
+            if (selectedCount === 0) {
+                selectSelected.innerHTML = '<span class="placeholder-text">Select Your Services</span><i class="fas fa-chevron-down select-arrow"></i>';
+            } else {
+                const tagsContainer = document.createElement('div');
+                tagsContainer.className = 'selected-tags';
+                
+                Array.from(selectedValues).forEach(value => {
+                    const tag = document.createElement('span');
+                    tag.className = 'selected-tag';
+                    tag.innerHTML = `${value} <span class="remove-tag" data-value="${value}">×</span>`;
+                    tagsContainer.appendChild(tag);
+                });
+                
+                selectSelected.innerHTML = '';
+                selectSelected.appendChild(tagsContainer);
+                
+                const arrow = document.createElement('i');
+                arrow.className = 'fas fa-chevron-down select-arrow';
+                selectSelected.appendChild(arrow);
+                
+                // Add remove tag functionality
+                const removeTags = selectSelected.querySelectorAll('.remove-tag');
+                removeTags.forEach(removeTag => {
+                    removeTag.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const value = this.getAttribute('data-value');
+                        selectedValues.delete(value);
+                        
+                        // Update option visual state
+                        const option = document.querySelector(`[data-value="${value}"]`);
+                        if (option) option.classList.remove('selected-option');
+                        
+                        updateSelectedDisplay();
+                        updateHiddenSelect();
+                    });
+                });
+            }
+        }
+        
+        function updateHiddenSelect() {
+            const originalSelect = document.querySelector('#service');
+            const options = originalSelect.querySelectorAll('option');
+            
+            // Clear all selections
+            options.forEach(option => option.selected = false);
+            
+            // Set selected options
+            selectedValues.forEach(value => {
+                const option = originalSelect.querySelector(`option[value="${value}"]`);
+                if (option) option.selected = true;
+            });
+            
+            // Trigger change event
+            originalSelect.dispatchEvent(new Event('change'));
+        }
+        
+        // Close all dropdowns except the current one
+        function closeAllSelect(elmnt) {
+            const selectItems = document.querySelectorAll('.select-items');
+            const selectSelected = document.querySelectorAll('.select-selected');
+            
+            selectItems.forEach(function(item, index) {
+                if (elmnt && elmnt.querySelector('.select-items') === item) return;
+                item.classList.add('select-hide');
+                selectSelected[index].classList.remove('select-arrow-active');
+            });
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            closeAllSelect();
         });
         
-        if (!isValid) {
-            Utils.showNotification('Please fill in all required fields.', 'error');
-            return;
-        }
-
-        this.showStatus("Sending...", "success");
-        
-        try {
-            const formData = new FormData(this.form);
-            const response = await fetch(this.scriptURL, {
-                method: "POST",
-                body: formData,
-            });
-            
-            const result = await response.text();
-            console.log("Form submission success:", result);
-            
-            this.form.reset();
-            this.showSuccessMessage();
-            this.trackFormSubmission();
-            
-        } catch (error) {
-            console.error("Form submission error:", error);
-            this.showStatus("Failed to send message. Please try again.", "error");
-        }
-    }
-
-    showStatus(message, type) {
-        if (this.statusDiv) {
-            this.statusDiv.innerText = message;
-            this.statusDiv.className = `alert-${type}`;
-            this.statusDiv.style.display = "block";
-        }
-    }
-
-    showSuccessMessage() {
-        if (this.successMessage) {
-            this.successMessage.className = "alert-success";
-            this.successMessage.style.display = "block";
-            this.successMessage.innerText = "Thank you! Your message was submitted.";
-        }
-        
-        if (this.statusDiv) {
-            this.statusDiv.style.display = "none";
-        }
-
-        setTimeout(() => {
-            if (this.successMessage) {
-                this.successMessage.style.display = "none";
-            }
-        }, 5000);
-    }
-
-    trackFormSubmission() {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'form_submit', {
-                form_name: 'contact_form'
-            });
-        }
-    }
-}
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initCustomSelect();
+            new ContactFormHandler();
+        });
 
 // =============================================================================
 // MOBILE MENU HANDLER - FIXED VERSION
