@@ -2356,9 +2356,9 @@ section {
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: clamp(1rem, 3vw, 1.5rem);
-  margin-bottom: var(--spacing-sm);
-  padding: clamp(1rem, 3vw, 1.5rem);
+  gap: clamp(0.7rem, 3vw, 0.7rem);
+  margin-bottom: 0.4rem;
+  padding: clamp(1rem, 3vw, 1rem);
   border-radius: var(--border-radius);
   transition: var(--transition);
   position: relative;
@@ -2370,7 +2370,7 @@ section {
 }
 
 .contact-item i {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 3vw, 1rem);
   color: var(--primary-color);
   background: rgba(249, 115, 22, 0.1);
   width: 50px;
@@ -2390,7 +2390,7 @@ section {
 }
 
 .contact-item div h4 {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2.5vw, 1rem);
   font-weight: 600;
   color: var(--dark-color);
   margin-bottom: 5px;
@@ -2401,7 +2401,7 @@ section {
   color: var(--gray-color);
   text-decoration: none;
   transition: var(--transition);
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 2vw, 0.8rem);
 }
 
 .contact-item div a:hover {
@@ -2429,7 +2429,7 @@ section {
 }
 
 .social-network-title {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2.5vw, 1rem);
   font-weight: 600;
   color: var(--dark-color);
   margin-bottom: clamp(1rem, 3vw, 1.5rem);
@@ -2463,9 +2463,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(40px, 6vw, 50px);
-  height: clamp(40px, 6vw, 50px);
-  border-radius: clamp(8px, 2vw, 12px);
+  width: clamp(40px, 6vw, 45px);
+  height: clamp(40px, 6vw, 45px);
+  border-radius: clamp(8px, 2vw, 8px);
   background: rgba(249, 115, 22, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(249, 115, 22, 0.1);
@@ -2554,7 +2554,7 @@ section {
 
 .form-group label {
   display: block;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 2vw, 0.8rem);
   font-weight: 600;
   color: var(--dark-color);
   margin-bottom: var(--spacing-xs);
@@ -2748,7 +2748,7 @@ section {
 }
 
 .blog-title {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 3vw, 1rem);
   font-weight: 700;
   color: var(--dark-color);
   margin-bottom: var(--spacing-sm);
@@ -2761,7 +2761,7 @@ section {
 }
 
 .blog-excerpt {
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 2vw, 0.9rem);
   color: var(--gray-color);
   line-height: 1.6;
   margin-bottom: clamp(1rem, 3vw, 1.5rem);
@@ -2774,7 +2774,7 @@ section {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-size: clamp(0.8rem, 2vw, 0.8rem);
   transition: var(--transition);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -2915,38 +2915,12 @@ section {
 }
 
 .brand-tagline {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-size: clamp( 0.9rem, 2.5vw, 0.9rem);
   color: #94a3b8;
   line-height: 1.6;
   margin-bottom: var(--spacing-sm);
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  .brand-tagline {
-    text-align: left;
-  }
-}
-
-.location-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  background: rgba(249, 115, 22, 0.1);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 20px;
-  border: 1px solid rgba(249, 115, 22, 0.2);
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  color: #f1c40f;
-  margin-bottom: var(--spacing-sm);
-}
-
-.rwanda-flag {
-  width: 20px;
-  height: 15px;
-  background: linear-gradient(to bottom, #20a5ea 33%, #fad646 33% 66%, #43b05c 66%);
-  border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
 }
 
 .social-grid {

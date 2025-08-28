@@ -74,7 +74,7 @@
         <p class="preloader-slogan">Your task, our priority</p>
     </div>
 
-    <!-- Header -->
+      <!-- Header -->
     <header id="header">
         <div class="container">
             <nav class="navbar" aria-label="Main Navigation">
@@ -88,15 +88,57 @@
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="index.html#about" class="nav-link">About</a></li>
-                    <li><a href="index.html#services" class="nav-link">Services</a></li>
-                    <li><a href="index.html#team" class="nav-link">Portfolio</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+           
+                  <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                         <!-- Services Dropdown -->
+                        <li class="nav-item" id="services-dropdown">
+                            <a href="#" class="nav-link">
+                                Our Expertise
+                                <span class="dropdown-arrow">▼</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item">
+                                    <a href="automation.html" class="dropdown-link">
+                                        <div class="service-title">Intelligent Automation</div>
+                                        <div class="service-description">AI-powered workflows & process optimization</div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="web-design.html" class="dropdown-link">
+                                        <div class="service-title">Digital Experience Design</div>
+                                        <div class="service-description">Premium web design & development</div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="branding.html" class="dropdown-link">
+                                        <div class="service-title">Brand Excellence</div>
+                                        <div class="service-description">Strategic branding & visual identity</div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a href="vasupport.html" class="dropdown-link">
+                                        <div class="service-title">Executive Support</div>
+                                        <div class="service-description">Professional virtual assistance services</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><a href="index.html#team" class="nav-link">Portfolio</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li><a href="#latest-news" class="nav-link active">Blog</a></li>
+                    </ul>
                     
-                </ul>
+                    <!-- CTA Button for Mobile (inside the mobile menu) -->
+                    <a href="#get-started" class="nav-cta-button mobile-cta">Get Started</a>
+                </div>
+
+                <!-- CTA Button for Desktop (always visible) -->
+                <a href="#get-started" class="nav-cta-button desktop-cta">Get Started</a>
+            
             </nav>
         </div>
     </header>
@@ -538,7 +580,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+  <footer class="footer">
         <div class="floating-particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -556,22 +598,17 @@
                             <a href="index.html" class="brand-name"><img src="/asset/img/logo/main-2.png" alt="Afa-Virtuals log"></a>
                         </div>
                         
-                        <p class="brand-tagline">
-                            Empowering businesses with premium virtual assistant services, automation solutions, and administrative support from the heart of Africa.
-                        </p>
+                     <p class="brand-tagline">
+                        Powering real estate agents, teams, and brokerages with smart automation solutions that save time, cut costs, and close more deals.
+                    </p>
+
                         
-                        <div class="location-badge">
-                            <span class="rwanda-flag"></span>
-                            <span>Based in Kigali, Rwanda</span>
-                        </div>
+                      
                         
                         <div class="social-section">
                             <div class="social-grid">
                                 <a href="https://www.linkedin.com/company/afavirtuals" target="_blank" class="social-link" aria-label="LinkedIn">
                                     <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://forms.gle/VrYcahZMHVZGFfXw5" target="_blank" class="social-link" aria-label="WhatsApp">
-                                    <i class="fab fa-whatsapp"></i>
                                 </a>
                                 <a href="https://www.instagram.com/afavirtuals" target="_blank" class="social-link" aria-label="Instagram">
                                     <i class="fab fa-instagram"></i>
@@ -590,23 +627,22 @@
                         <h3 class="footer-title">Quick Links</h3>
                         <ul class="footer-list">
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="automation.html">Intelligent Automation</a></li>
+                            <li><a href="web-design.html">Digital Experience</a></li>
+                            <li><a href="branding.html">Brand Experience</a></li>
+                            <li><a href="#contact">Get Started</a></li>
                             <li><a href="legal.html">Privacy Policy</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-section">
-                        <h3 class="footer-title">Our Services</h3>
+                        <h3 class="footer-title">Our Expertise</h3>
                         <ul class="footer-list">
-                            <li><a href="services.html#administrative">Administrative Support</a></li>
-                            <li><a href="services.html#tech">Tech Support & Solutions</a></li>
-                            <li><a href="services.html#web">Web Design & Development</a></li>
-                            <li><a href="services.html#automation">Business Automation</a></li>
-                            <li><a href="services.html#packages">Service Packages</a></li>
+                            <li><a href="automation.html">Intelligent Automation</a></li>
+                            <li><a href="web-design.html">Digital Experience Design</a></li>
+                            <li><a href="branding.html">Brand Experience</a></li>
+                            <li><a href="vasupport.html">Executive Assistant</a></li>
                         </ul>
                     </div>
                     
@@ -646,15 +682,6 @@
                                 <div class="info-value">Kigali, Rwanda</div>
                             </div>
                         </div>
-                        
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-globe-africa"></i>
-                            </div>
-                            <div class="info-details">
-                                <h4 class="info-label">Coverage</h4>
-                                <div class="info-value">Available Worldwide</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -670,7 +697,7 @@
         </div>
     </footer>
 
-    <!-- Chat Widget -->
+      <!-- Chat Widget -->
     <div class="chat-widget">
         <!-- Initial Popup -->
         <div class="chat-popup" id="initialPopup">
@@ -731,6 +758,11 @@
             <i class="fas fa-comments"></i>
         </button>
     </div>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 
   <style>
         :root {

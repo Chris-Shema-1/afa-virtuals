@@ -143,15 +143,16 @@
 
         .blog-hero-content h1 {
             font-family: var(--font-primary);
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--dark-color);
             margin-bottom: 1.5rem;
+            margin-top: 2.5rem;
             line-height: 1.2;
         }
 
         .blog-hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--gray-color);
             margin-bottom: 2rem;
             font-weight: 500;
@@ -170,7 +171,7 @@
             align-items: center;
             gap: 0.5rem;
             color: var(--gray-color);
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
 
         .meta-item i {
@@ -194,14 +195,14 @@
         }
 
         .blog-stat-number {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary-color);
             display: block;
         }
 
         .blog-stat-label {
-            font-size: 1.3rem;
+            font-size: 1rem;
             color: var(--gray-color);
             margin-top: 0.5rem;
         }
@@ -227,7 +228,7 @@
 
         .content-section h2 {
             font-family: var(--font-primary);
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--dark-color);
             margin-bottom: 1.5rem;
@@ -248,14 +249,14 @@
 
         .content-section h3 {
             font-family: var(--font-primary);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--dark-color);
             margin: 2rem 0 1rem;
         }
 
         .content-section p {
-            font-size: 1.3rem;
+            font-size: 1rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
             color: #374151;
@@ -267,7 +268,7 @@
         }
 
         .content-section li {
-            font-size: 1.3rem;
+            font-size: 1rem;
             line-height: 1.7;
             margin-bottom: 0.8rem;
             color: #374151;
@@ -370,7 +371,7 @@
 
         .step-content p {
             margin-bottom: 0;
-            font-size: 1.3rem;
+            font-size: 1rem;
         }
 
         /* Case Study Box */
@@ -441,7 +442,7 @@
         .toc-list a {
             color: var(--gray-color);
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1rem;
             transition: var(--transition);
             display: block;
             padding: 0.5rem 0;
@@ -464,6 +465,12 @@
 
         .sidebar-cta h4 {
             margin-bottom: 1rem;
+        }
+
+        .sidebar-cta p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-color);
         }
 
         .sidebar-cta .btn {
